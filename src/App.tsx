@@ -15,7 +15,6 @@ import DestinationManagement from './components/DestinationManagement';
 import Weddings from './components/Weddings';
 import MiceTravel from './components/MiceTravel';
 import TravelServices from './components/TravelServices';
-
 function App() {
   return (
     <Router>
@@ -34,12 +33,42 @@ function App() {
               <AssistiveTouchButton />
             </>
           } />
-          <Route path="/corporate-events" element={<CorporateEvents />} />
-          <Route path="/concerts" element={<Concerts />} />
-          <Route path="/destination-management" element={<DestinationManagement />} />
-          <Route path="/weddings" element={<Weddings />} />
-          <Route path="/mice-travel" element={<MiceTravel />} />
-          <Route path="/travel-services" element={<TravelServices />} />
+          <Route path="/corporate-events" element={
+            <>
+              <CorporateEvents />
+              <Footer />
+            </>
+          } />
+          <Route path="/concerts" element={
+            <>
+              <Concerts />
+              <Footer />
+            </>
+          } />
+          <Route path="/destination-management" element={
+            <>
+              <DestinationManagement />
+              <Footer />
+            </>
+          } />
+          <Route path="/weddings" element={
+            <>
+              <Weddings />
+              <Footer />
+            </>
+          } />
+          <Route path="/mice-travel" element={
+            <>
+              <MiceTravel />
+              <Footer />
+            </>
+          } />
+          <Route path="/travel-services" element={
+            <>
+              <TravelServices />
+              <Footer />
+            </>
+          } />
         </Routes>
       </div>
     </Router>

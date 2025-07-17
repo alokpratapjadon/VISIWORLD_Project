@@ -1,10 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
+
+declare global {
+  namespace NodeJS {
+    interface Timeout {}
+  }
+}
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 import video1 from '../Assets/dj.mp4';
 import video2 from '../Assets/see.mp4';
 import video3 from '../Assets/sea.mp4';
 import video4 from '../Assets/IMG_9056.mp4';
+import video5 from '../Assets/meeting.mp4';
 
 const About = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
@@ -12,11 +19,11 @@ const About = () => {
   const [showArrows, setShowArrows] = useState(false);
 
   const videoRef = useRef<HTMLVideoElement>(null);
-  const arrowTimer = useRef<NodeJS.Timeout | null>(null);
-  const videoTimer = useRef<NodeJS.Timeout | null>(null);
-  const contentTimer = useRef<NodeJS.Timeout | null>(null);
+  const arrowTimer = useRef<number | null>(null);
+  const videoTimer = useRef<number | null>(null);
+  const contentTimer = useRef<number | null>(null);
 
-  const videos = [video2, video1, video3, video4];
+  const videos = [video2, video1, video3, video4, video5];
 
   const contentSections = [
     {

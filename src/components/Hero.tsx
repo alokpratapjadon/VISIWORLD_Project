@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import heroVideo from '../Assets/8029-206210318.mov';
+import { useState } from 'react';
+import heroVideo from '../Assets/EventVideo.mp4';
 import logo from '../Assets/IMG_9055.png';
 import { Menu, X } from 'lucide-react';
 
@@ -79,7 +79,7 @@ const Hero = () => {
         ))}
       </nav>
 
-      {/* 🎯 Center Hero Content */}
+      {/* 🎯 Center Hero Content
       <div className="relative z-20 text-center max-w-4xl mx-auto px-4 flex flex-col items-center justify-center h-full">
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white mb-6 md:mb-8 leading-tight animate-wave font-prata">
           UNFORGETTABLE
@@ -89,7 +89,7 @@ const Hero = () => {
         <button className="bg-luxury-gold text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium hover:bg-luxury-darkgold transition-all duration-300 transform hover:scale-105 font-prata">
           Let's Plan Together
         </button>
-      </div>
+      </div> */}
     </section>
   );
 };

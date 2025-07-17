@@ -7,35 +7,35 @@ const Testimonials = () => {
   const [arrowTimer, setArrowTimer] = useState<ReturnType<typeof setTimeout> | null>(null);
 
   const testimonials = [
-    {
-      name: "Sarah Johnson",
-      position: "CEO, Tech Innovations",
-      company: "Tech Innovations Inc.",
-      text: "Eventra transformed our annual conference into an unforgettable experience. Their attention to detail and creative approach exceeded all our expectations. The team was professional, responsive, and delivered flawlessly.",
-      image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-    },
-    {
-      name: "Michael Chen",
-      position: "Marketing Director",
-      company: "Global Solutions Ltd.",
-      text: "Working with Eventra for our product launch was the best decision we made. They handled everything seamlessly, from venue selection to entertainment. The event was a huge success and generated incredible buzz for our brand.",
-      image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-    },
-    {
-      name: "Emily Rodriguez",
-      position: "Bride",
-      company: "Personal Event",
-      text: "Our wedding was absolutely magical thanks to Eventra. They listened to our vision and brought it to life in ways we never imagined. Every guest commented on how beautiful and well-organized everything was.",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-    },
-    {
-      name: "David Thompson",
-      position: "HR Director",
-      company: "Fortune Corp",
-      text: "The incentive tour organized by Eventra was exceptional. Our team had an amazing experience, and it really boosted morale and productivity. The logistics were perfect, and every detail was thoughtfully planned.",
-      image: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-    }
-  ];
+  {
+    name: "Simran & Arjun",
+    position: "Bride & Groom",
+    company: "New Delhi",
+    text: "VisiWorld planned our Goa wedding like a dream. The team was proactive, creative, and responsive throughout!",
+    image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+  },
+  {
+    name: "Rajiv Mehra",
+    position: "Corporate Client",
+    company: "Product Launch – Pan India",
+    text: "Smooth execution of our pan-India product launch. VisiWorld managed everything with professionalism.",
+    image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+  },
+  {
+    name: "Ananya D.",
+    position: "Event Head",
+    company: "College Fest – Mumbai",
+    text: "Our college fest concert was epic—lighting, sound, security all top-notch!",
+    image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+  },
+  {
+    name: "Priya & Karan",
+    position: "Anniversary Clients",
+    company: "Udaipur",
+    text: "Our luxury anniversary event in Udaipur was a fairy tale. Every detail from decor to timing was flawless. VisiWorld truly made it unforgettable!",
+    image: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+  }
+];
 
   useEffect(() => {
     const timer = setInterval(() => {
