@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
@@ -55,10 +56,6 @@ const Services = () => {
     }
   ];
 
-  const handleServiceClick = (slug: string) => {
-    window.location.href = `#${slug}`;
-  };
-
   return (
     <section id="services" className="py-12 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -106,11 +103,11 @@ const Services = () => {
           >
             {services.map((service, index) => (
               <SwiperSlide key={index}>
-                <div
-                  className="group cursor-pointer bg-white shadow-md hover:shadow-lg transition-all duration-500 overflow-hidden rounded-lg"
+                <Link
+                  to={`/${service.slug}`}
+                  className="group block bg-white shadow-md hover:shadow-lg transition-all duration-500 overflow-hidden rounded-lg"
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
-                  onClick={() => handleServiceClick(service.slug)}
                 >
                   <div className="relative h-56 md:h-60 overflow-hidden rounded-t-lg">
                     <div 
@@ -138,7 +135,7 @@ const Services = () => {
                       <ArrowRight className="w-4 h-4 text-luxury-gold transform group-hover:translate-x-1 transition-transform duration-300 bg-white p-1 rounded-full" />
                     </div>
                   </div>
-                </div>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>

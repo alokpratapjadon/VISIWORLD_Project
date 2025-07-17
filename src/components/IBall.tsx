@@ -1,12 +1,12 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, MouseEvent } from 'react';
 import './ball.css';
 import { Instagram, Facebook, Twitter, MessageCircleX } from 'lucide-react';
 
-const AssistiveTouchButton = () => {
+const AssistiveTouchButton: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [position, setPosition] = useState({ x: 10, y: 100 });
   const [isDragging, setIsDragging] = useState(false);
-  const [menuDirection, setMenuDirection] = useState('right');
+  const [menuDirection, setMenuDirection] = useState<'left' | 'right'>('right');
   const offset = useRef({ x: 0, y: 0 });
 
   const buttonSize = 50;
@@ -21,7 +21,7 @@ const AssistiveTouchButton = () => {
       }
     };
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent<Document> | globalThis.MouseEvent) => {
       if (isDragging) {
         setPosition({
           x: e.clientX - offset.current.x,
@@ -70,7 +70,7 @@ const AssistiveTouchButton = () => {
     };
   }, [isDragging, position]);
 
-  const handleMouseDown = (e) => {
+  const handleMouseDown = (e: React.MouseEvent<HTMLButtonElement>) => {
     setIsDragging(true);
     offset.current = {
       x: e.clientX - position.x,
@@ -82,7 +82,7 @@ const AssistiveTouchButton = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleMenuItemClick = (link) => {
+  const handleMenuItemClick = (link: string) => {
     window.open(link, '_blank');
     setIsMenuOpen(false);
   };

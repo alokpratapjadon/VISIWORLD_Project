@@ -2,65 +2,96 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 import video1 from '../Assets/dj.mp4';
-import video2 from '../Assets/see.mp4'; // This plays first now
+import video2 from '../Assets/see.mp4';
 import video3 from '../Assets/sea.mp4';
 import video4 from '../Assets/IMG_9056.mp4';
 
 const About = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [currentContentIndex, setCurrentContentIndex] = useState(0);
   const [showArrows, setShowArrows] = useState(false);
-const [arrowTimer, setArrowTimer] = useState<ReturnType<typeof setTimeout> | null>(null);  const [currentContentIndex, setCurrentContentIndex] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
-  const videos = [video2, video1, video3, video4]; // See video plays first
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const arrowTimer = useRef<NodeJS.Timeout | null>(null);
+  const videoTimer = useRef<NodeJS.Timeout | null>(null);
+  const contentTimer = useRef<NodeJS.Timeout | null>(null);
+
+  const videos = [video2, video1, video3, video4];
 
   const contentSections = [
     {
       title: "Our Story",
-      content: "Regalia Events is a premier luxury event management company specializing in creating unforgettable experiences that exceed expectations."
+      content: "VisiWorld is a premier event management company in India, known for creativity, integrity, and flawless execution. With expert teams in Delhi, Mumbai, Jaipur, and Goa, we deliver exceptional experiences with regional insight and national reach."
     },
     {
-      title: "Our Mission",
-      content: "To create exceptional events that inspire, connect, and leave lasting impressions. We strive to exceed client expectations through innovative solutions."
+      title: "Our Signature Experiences",
+      content: "From royal weddings in Udaipur to corporate summits in Gurgaon and music festivals in Mumbai, we craft immersive events through storytelling, design, logistics, and personalized guest experiences."
     },
+
     {
-      title: "Our Vision",
-      content: "To be the leading luxury event management company, recognized for our creativity, professionalism, and ability to transform dreams into extraordinary realities."
-    }
+  title: "Why Choose Us",
+  content:
+    "• 100+ successful events across India\n" +
+    "• Strong vendor network nationwide\n" +
+    "• In-house creative, production & coordination teams\n" +
+    "• Tailored packages for all budgets\n" +
+    "• Recognized by industry leaders"
+}
   ];
 
   const handleInteraction = () => {
     setShowArrows(true);
-    if (arrowTimer) clearTimeout(arrowTimer);
-    const timer = setTimeout(() => setShowArrows(false), 3000);
-    setArrowTimer(timer);
+    if (arrowTimer.current) clearTimeout(arrowTimer.current);
+    arrowTimer.current = setTimeout(() => setShowArrows(false), 3000);
   };
 
   const nextVideo = () => {
-    setCurrentVideoIndex((prev) => (prev + 1) % videos.length);
+    setCurrentVideoIndex(prev => (prev + 1) % videos.length);
     handleInteraction();
   };
 
   const prevVideo = () => {
-    setCurrentVideoIndex((prev) => (prev - 1 + videos.length) % videos.length);
+    setCurrentVideoIndex(prev => (prev - 1 + videos.length) % videos.length);
     handleInteraction();
   };
 
   const nextContent = () => {
-    setCurrentContentIndex((prev) => (prev + 1) % contentSections.length);
+    setCurrentContentIndex(prev => (prev + 1) % contentSections.length);
     handleInteraction();
   };
 
   const prevContent = () => {
-    setCurrentContentIndex((prev) => (prev - 1 + contentSections.length) % contentSections.length);
+    setCurrentContentIndex(prev => (prev - 1 + contentSections.length) % contentSections.length);
     handleInteraction();
   };
 
+  // Auto video carousel every 10s
+  useEffect(() => {
+    videoTimer.current = setInterval(() => {
+      setCurrentVideoIndex(prev => (prev + 1) % videos.length);
+    }, 10000); // 10 seconds
+
+    return () => {
+      if (videoTimer.current) clearInterval(videoTimer.current);
+    };
+  }, []);
+
+  // Auto text carousel every 5s
+  useEffect(() => {
+    contentTimer.current = setInterval(() => {
+      setCurrentContentIndex(prev => (prev + 1) % contentSections.length);
+    }, 10000); // 5 seconds
+
+    return () => {
+      if (contentTimer.current) clearInterval(contentTimer.current);
+    };
+  }, []);
+
   useEffect(() => {
     return () => {
-      if (arrowTimer) clearTimeout(arrowTimer);
+      if (arrowTimer.current) clearTimeout(arrowTimer.current);
     };
-  }, [arrowTimer]);
+  }, []);
 
   return (
     <section id="about" className="py-12 md:py-20 bg-white">
@@ -116,7 +147,7 @@ const [arrowTimer, setArrowTimer] = useState<ReturnType<typeof setTimeout> | nul
             </div>
           </div>
 
-          {/* Video Slider */}
+          {/* Right Video */}
           <div className="relative">
             <div
               className="h-64 md:h-96 bg-black shadow-xl overflow-hidden cursor-pointer"
@@ -134,21 +165,21 @@ const [arrowTimer, setArrowTimer] = useState<ReturnType<typeof setTimeout> | nul
                 playsInline
               />
               <div className={`absolute inset-0 flex items-center justify-between px-4 transition-opacity duration-300 ${
-  showArrows ? 'opacity-100' : 'opacity-0'
-}`}>
-  <button
-    onClick={(e) => { e.stopPropagation(); prevVideo(); }}
-    className="w-10 h-10 md:w-12 md:h-12 text-white hover:scale-110 transition-all duration-300"
-  >
-    <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
-  </button>
-  <button
-    onClick={(e) => { e.stopPropagation(); nextVideo(); }}
-    className="w-10 h-10 md:w-12 md:h-12 text-white hover:scale-110 transition-all duration-300"
-  >
-    <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
-  </button>
-</div>
+                showArrows ? 'opacity-100' : 'opacity-0'
+              }`}>
+                <button
+                  onClick={(e) => { e.stopPropagation(); prevVideo(); }}
+                  className="w-10 h-10 md:w-12 md:h-12 text-white hover:scale-110 transition-all duration-300"
+                >
+                  <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
+                </button>
+                <button
+                  onClick={(e) => { e.stopPropagation(); nextVideo(); }}
+                  className="w-10 h-10 md:w-12 md:h-12 text-white hover:scale-110 transition-all duration-300"
+                >
+                  <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
+                </button>
+              </div>
             </div>
 
             <div className="flex justify-center space-x-2 mt-4">
@@ -164,8 +195,6 @@ const [arrowTimer, setArrowTimer] = useState<ReturnType<typeof setTimeout> | nul
             </div>
           </div>
         </div>
-
-        {/* STATS SECTION REMOVED */}
       </div>
     </section>
   );
