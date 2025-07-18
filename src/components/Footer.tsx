@@ -1,4 +1,3 @@
-import React from 'react';
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
 import LogoImage from '../Assets/IMG_9055.png';
 
