@@ -104,7 +104,7 @@ const Services = () => {
             {services.map((service, index) => (
               <SwiperSlide key={index}>
                 <Link
-                  to={`/${service.slug}`}
+                  to={`/services/${service.slug}`}
                   className="group block bg-white shadow-md hover:shadow-lg transition-all duration-500 overflow-hidden rounded-lg"
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
