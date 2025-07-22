@@ -4,6 +4,7 @@ import corporate1 from '../Assets/corporate1.jpg';
 import corporate2 from '../Assets/corporate2.jpg';
 import corporate3 from '../Assets/corporate3.jpg';
 import corporateVideo from '../Assets/corporate.mp4';
+import corporateVideoWebm from '../Assets/corporate.webm'; // New WebM video import
 
 const CorporateEvents = () => {
   const images = [
@@ -30,9 +31,11 @@ const CorporateEvents = () => {
           muted
           playsInline
           preload="auto"
+          poster={corporate1} // Use a poster image for better perceived performance
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
-          src={corporateVideo}
         >
+          <source src={corporateVideoWebm} type="video/webm" />
+          <source src={corporateVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black/50 z-10" />
