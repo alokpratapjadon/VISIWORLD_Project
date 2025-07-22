@@ -3,6 +3,7 @@ import logo from '../Assets/IMG_9055.png';
 import wedding1 from '../Assets/wedding1.jpg';
 import wedding2 from '../Assets/wedding2.jpg';
 import wedding3 from '../Assets/wedding3.jpg';
+import miceTravelVideo from '../Assets/weddingVideo.mp4';
 
 const MiceTravel = () => {
   const images = [
@@ -25,12 +26,13 @@ const MiceTravel = () => {
           loop
           muted
           playsInline
+          preload="auto"
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          src={miceTravelVideo}
         >
-          <source src={import.meta.env.BASE_URL + 'src/Assets/weddingVideo.mp4'} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 bg-black/40 z-10" /> {/* darker overlay */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="relative z-20 h-full flex flex-col justify-center items-center text-center px-6">
           <motion.h1
             className="text-5xl md:text-6xl font-extrabold tracking-wide mb-6 bg-gradient-to-r from-yellow-400 to-yellow-200 text-transparent bg-clip-text"
@@ -84,23 +86,23 @@ const MiceTravel = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* "And more..." */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <p className="text-lg md:text-xl font-medium text-gray-700">
-            ...and much more to make your corporate travel seamless and successful.
-          </p>
-          <p className="mt-2 text-sm text-yellow-700 italic">
-            From planning to execution, every detail handled with precision.
-          </p>
-        </motion.div>
       </section>
+
+      {/* "And more..." */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+        viewport={{ once: true }}
+        className="mt-16 text-center"
+      >
+        <p className="text-lg md:text-xl font-medium text-gray-700">
+          ...and much more to make your corporate travel seamless and successful.
+        </p>
+        <p className="mt-2 text-sm text-yellow-700 italic">
+          From planning to execution, every detail handled with precision.
+        </p>
+      </motion.div>
 
       {/* Featured Services */}
       <section className="py-20 px-6 md:px-20 bg-[#fdf6e3]">

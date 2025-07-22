@@ -3,6 +3,7 @@ import logo from '../Assets/IMG_9055.png';
 import wedding1 from '../Assets/wedding1.jpg';
 import wedding2 from '../Assets/wedding2.jpg';
 import wedding3 from '../Assets/wedding3.jpg';
+import concertVideo from '../Assets/weddingVideo.mp4';
 
 const Concerts = () => {
   const images = [
@@ -25,9 +26,10 @@ const Concerts = () => {
           loop
           muted
           playsInline
+          preload="auto"
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          src={concertVideo}
         >
-          <source src={import.meta.env.BASE_URL + 'src/Assets/weddingVideo.mp4'} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black/40 z-10" /> {/* darker overlay */}

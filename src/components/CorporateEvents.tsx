@@ -3,6 +3,7 @@ import logo from '../Assets/IMG_9055.png';
 import corporate1 from '../Assets/corporate1.jpg';
 import corporate2 from '../Assets/corporate2.jpg';
 import corporate3 from '../Assets/corporate3.jpg';
+import corporateVideo from '../Assets/corporate.mp4';
 
 const CorporateEvents = () => {
   const images = [
@@ -28,9 +29,10 @@ const CorporateEvents = () => {
           loop
           muted
           playsInline
+          preload="auto"
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          src={corporateVideo}
         >
-          <source src={import.meta.env.BASE_URL + 'src/Assets/corporate.mp4'} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black/50 z-10" />
