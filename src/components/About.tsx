@@ -165,6 +165,7 @@ const About = () => {
                 muted
                 loop
                 playsInline
+                preload="auto"
               />
               <div className={`absolute inset-0 flex items-center justify-between px-4 transition-opacity duration-300 ${
                 showArrows ? 'opacity-100' : 'opacity-0'
