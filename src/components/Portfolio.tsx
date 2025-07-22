@@ -37,10 +37,10 @@ const Portfolio = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="bg-white/50 backdrop-blur-md rounded-xl p-6 md:p-10 shadow-xl">
           <div className="text-center mb-12 md:mb-16">
-            <p className="text-luxury-gold font-medium text-xs md:text-sm uppercase tracking-wide mb-4 font-prata">
+            <p className="text-luxury-gold font-medium text-xs md:text-sm uppercase tracking-wide mb-4 font-poppins">
               RECENT SERVICES
             </p>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-8 md:mb-12 font-prata">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-8 md:mb-12 font-poppins">
               RECENT EVENTS
             </h2>
           </div>
@@ -98,7 +98,7 @@ const Portfolio = () => {
                     />
                     <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white bg-gradient-to-t from-black/40 to-transparent">
                       <h3
-                        className={`text-lg md:text-xl font-light font-prata ${
+                        className={`text-lg md:text-xl font-light font-poppins ${
                           item.title === "Destination Wedding"
                             ? "drop-shadow-[1px_1px_1px_rgba(0,0,0,0.8)]"
                             : ""

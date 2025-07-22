@@ -9,7 +9,7 @@ import 'swiper/css/navigation';
 // Import all image assets
 import CorporateEventImg from '../Assets/CorprateEvent.jpg';
 import ConcertImg from '../Assets/IMG_9058.jpg';
-import DestinationImg from '../Assets/Destination.jpg';
+import DestinationImg from '../Assets/Destination1.jpg';
 import WeddingImg from '../Assets/IMG_9061.jpg';
 import CorporateTravelImg from '../Assets/corporate travel.jpg';
 import HotelTravelImg from '../Assets/IMG_9059.jpg';
@@ -60,8 +60,8 @@ const Services = () => {
     <section id="services" className="py-12 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
-          <p className="text-luxury-gold font-medium text-xs md:text-sm uppercase tracking-wide mb-4 font-prata">OUR SERVICES</p>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-8 md:mb-12 font-prata">
+          <p className="text-luxury-gold font-medium text-xs md:text-sm uppercase tracking-wide mb-4 font-poppins">OUR SERVICES</p>
+          <h2 className="text-3xl md:text-6xl lg:text-6xl font-light text-gray-1000 mb-8 md:mb-12 font-poppins">
             EXCEPTIONAL SERVICES
           </h2>
         </div>

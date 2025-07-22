@@ -77,8 +77,8 @@ const Testimonials = () => {
     <section className="py-12 md:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
-          <p className="text-luxury-gold font-medium text-xs md:text-sm uppercase tracking-wide mb-4 font-prata">TESTIMONIALS</p>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-8 md:mb-12 font-prata">
+          <p className="text-luxury-gold font-medium text-xs md:text-sm uppercase tracking-wide mb-4 font-poppins">TESTIMONIALS</p>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-8 md:mb-12 font-poppins">
             CLIENT STORIES
           </h2>
         </div>

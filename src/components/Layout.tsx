@@ -7,7 +7,7 @@ import AssistiveTouchButton from './IBall';
 const Layout: React.FC = () => {
   return (
     <>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white font-poppins">
         <Outlet />
         <Footer />
         <ScrollToTop />

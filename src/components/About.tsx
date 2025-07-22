@@ -1,10 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-declare global {
-  namespace NodeJS {
-    interface Timeout {}
-  }
-}
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 import video1 from '../Assets/dj.mp4';
@@ -19,9 +14,9 @@ const About = () => {
   const [showArrows, setShowArrows] = useState(false);
 
   const videoRef = useRef<HTMLVideoElement>(null);
-  const arrowTimer = useRef<number | null>(null);
-  const videoTimer = useRef<number | null>(null);
-  const contentTimer = useRef<number | null>(null);
+  const arrowTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const videoTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const contentTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const videos = [video2, video1, video3, video4, video5];
 
@@ -36,14 +31,14 @@ const About = () => {
     },
 
     {
-  title: "Why Choose Us",
-  content:
-    "• 100+ successful events across India\n" +
-    "• Strong vendor network nationwide\n" +
-    "• In-house creative, production & coordination teams\n" +
-    "• Tailored packages for all budgets\n" +
-    "• Recognized by industry leaders"
-}
+      title: "Why Choose Us",
+      content:
+        "• 100+ successful events across India\n" +
+        "• Strong vendor network nationwide\n" +
+        "• In-house creative, production & coordination teams\n" +
+        "• Tailored packages for all budgets\n" +
+        "• Recognized by industry leaders"
+    }
   ];
 
   const handleInteraction = () => {
@@ -104,8 +99,8 @@ const About = () => {
     <section id="about" className="py-12 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
-          <p className="text-luxury-gold font-medium text-xs md:text-sm uppercase tracking-wide mb-4 font-prata">ABOUT US</p>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-8 md:mb-12 font-prata">
+          <p className="text-luxury-gold font-medium text-xs md:text-sm uppercase tracking-wide mb-4 font-poppins">ABOUT US</p>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-8 md:mb-12 font-poppins">
             WHO WE ARE
           </h2>
         </div>
@@ -120,10 +115,10 @@ const About = () => {
               onClick={handleInteraction}
               onTouchStart={handleInteraction}
             >
-              <h3 className="text-2xl md:text-3xl font-light text-gray-900 mb-4 md:mb-6 font-prata">
+              <h3 className="text-2xl md:text-3xl font-light text-gray-900 mb-4 md:mb-6 font-poppins">
                 {contentSections[currentContentIndex].title}
               </h3>
-              <p className="text-base md:text-lg text-gray-700 leading-relaxed font-prata mb-6">
+              <p className="text-base md:text-lg text-gray-700 leading-relaxed font-poppins mb-6">
                 {contentSections[currentContentIndex].content}
               </p>
 
@@ -176,29 +171,17 @@ const About = () => {
               }`}>
                 <button
                   onClick={(e) => { e.stopPropagation(); prevVideo(); }}
-                  className="w-10 h-10 md:w-12 md:h-12 text-white hover:scale-110 transition-all duration-300"
+                  className="w-10 h-10 md:w-12 md:h-12 text-luxury-gold hover:scale-110 transition-all duration-300"
                 >
-                  <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
+                  <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
                 </button>
                 <button
                   onClick={(e) => { e.stopPropagation(); nextVideo(); }}
-                  className="w-10 h-10 md:w-12 md:h-12 text-white hover:scale-110 transition-all duration-300"
+                  className="w-10 h-10 md:w-12 md:h-12 text-luxury-gold hover:scale-110 transition-all duration-300"
                 >
-                  <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
+                  <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
                 </button>
               </div>
-            </div>
-
-            <div className="flex justify-center space-x-2 mt-4">
-              {videos.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentVideoIndex(index)}
-                  className={`w-3 h-3 md:w-4 md:h-4 rounded-full ${
-                    index === currentVideoIndex ? 'bg-luxury-gold shadow-lg' : 'bg-gray-200'
-                  } transition-all duration-300`}
-                />
-              ))}
             </div>
           </div>
         </div>

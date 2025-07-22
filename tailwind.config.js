@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         prata: ['Prata', 'serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
       colors: {
         luxury: {
