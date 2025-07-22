@@ -37,11 +37,11 @@ const Portfolio = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="bg-white/50 backdrop-blur-md rounded-xl p-6 md:p-10 shadow-xl">
           <div className="text-center mb-12 md:mb-16">
-            <p className="text-luxury-gold font-medium text-xs md:text-sm uppercase tracking-wide mb-4 font-poppins">
+            <p className="text-luxury-gold font-medium text-2xl md:text-2xl uppercase tracking-wide mb-4 font-poppins">
               RECENT SERVICES
             </p>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-8 md:mb-12 font-poppins">
-              RECENT EVENTS
+              Innovation Meets Celebration
             </h2>
           </div>
 

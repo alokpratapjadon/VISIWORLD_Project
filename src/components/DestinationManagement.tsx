@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import logo from '../Assets/IMG_9055.png';
-import wedding1 from '../Assets/wedding1.jpg';
-import wedding2 from '../Assets/wedding2.jpg';
-import wedding3 from '../Assets/wedding3.jpg';
+import wedding1 from '../Assets/Destination2.jpg';
+import wedding2 from '../Assets/Destination3.jpg';
+import wedding3 from '../Assets/Destination1.jpg';
+import destinationVideo from '../Assets/Destination1Video.mp4'; // ✅ Import video here
 
 const DestinationManagement = () => {
   const images = [
@@ -27,10 +28,10 @@ const DestinationManagement = () => {
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
         >
-          <source src={import.meta.env.BASE_URL + 'src/Assets/weddingVideo.mp4'} type="video/mp4" />
+          <source src={destinationVideo} type="video/mp4" /> {/* ✅ Fixed path */}
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 bg-black/40 z-10" /> {/* darker overlay */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="relative z-20 h-full flex flex-col justify-center items-center text-center px-6">
           <motion.h1
             className="text-5xl md:text-6xl font-extrabold tracking-wide mb-6 bg-gradient-to-r from-yellow-400 to-yellow-200 text-transparent bg-clip-text"
@@ -85,7 +86,6 @@ const DestinationManagement = () => {
           ))}
         </div>
 
-        {/* "And more..." */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
