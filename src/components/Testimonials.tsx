@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
-import { useSwipeable } from 'react-swipeable';
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -74,13 +73,6 @@ const Testimonials = () => {
     };
   }, [arrowTimer]);
 
-  const handlers = useSwipeable({
-    onSwipedLeft: () => nextTestimonial(),
-    onSwipedRight: () => prevTestimonial(),
-    preventDefaultTouchmoveEvent: true,
-    trackMouse: true
-  });
-
   return (
     <section className="py-12 md:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -91,7 +83,7 @@ const Testimonials = () => {
           </h2>
         </div>
 
-        <div className="relative max-w-4xl mx-auto" {...handlers}>
+        <div className="relative max-w-4xl mx-auto">
           {/* Testimonial Card */}
           <div 
             className="bg-white shadow-xl rounded-2xl p-6 md:p-8 lg:p-12 text-center cursor-pointer"
@@ -167,6 +159,7 @@ const Testimonials = () => {
   );
 };
 
+export default Testimonials;
 
 // No issues found in your code. The testimonial slider logic, auto-advance, arrow visibility, and pagination all look correct.
 // If you experience any bugs, check your Tailwind CSS setup and ensure the parent container is visible.

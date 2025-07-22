@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useSwipeable } from 'react-swipeable';
 
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -68,20 +67,6 @@ const About = () => {
     handleInteraction();
   };
 
-  // Swipe handlers for content and video
-  const swipeHandlers = useSwipeable({
-    onSwipedLeft: () => {
-      nextContent();
-      nextVideo();
-    },
-    onSwipedRight: () => {
-      prevContent();
-      prevVideo();
-    },
-    preventDefaultTouchmoveEvent: true,
-    trackMouse: false
-  });
-
   // Auto video carousel every 10s
   useEffect(() => {
     videoTimer.current = setInterval(() => {
@@ -111,7 +96,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className="py-12 md:py-20 bg-white" {...swipeHandlers}>
+    <section id="about" className="py-12 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
           <p className="text-luxury-gold font-medium text-xs md:text-sm uppercase tracking-wide mb-4 font-poppins">ABOUT US</p>
@@ -120,9 +105,9 @@ const About = () => {
           </h2>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-12 md:gap-16 items-center mb-16 md:mb-20 overflow-x-auto snap-x snap-mandatory scrollbar-thin scrollbar-thumb-luxury-gold scrollbar-track-gray-100">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center mb-16 md:mb-20">
           {/* Left Content */}
-          <div className="relative flex-shrink-0 w-full lg:w-1/2 snap-start">
+          <div className="relative">
             <div className="absolute inset-0 bg-gray-100 shadow-lg transform rotate-2 z-0"></div>
             <div className="absolute inset-0 bg-gray-50 shadow-md transform -rotate-1 z-10"></div>
             <div
@@ -165,7 +150,7 @@ const About = () => {
           </div>
 
           {/* Right Video */}
-          <div className="relative flex-shrink-0 w-full lg:w-1/2 snap-start">
+          <div className="relative">
             <div
               className="h-64 md:h-96 bg-black shadow-xl overflow-hidden cursor-pointer"
               onClick={handleInteraction}

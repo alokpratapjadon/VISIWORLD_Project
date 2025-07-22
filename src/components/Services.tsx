@@ -26,7 +26,7 @@ const Services = () => {
     },
     {
       title: "Concerts",
-      description: "Large-scale concert and music event management with world-class production values.",
+      description: "Large-scale concert production and music event management with world-class production values.",
       image: ConcertImg,
       slug: "concerts"
     },
