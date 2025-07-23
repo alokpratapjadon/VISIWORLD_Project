@@ -107,7 +107,7 @@ const Hero = () => {
         </div>
       </div>
 
-     {/* 🖥️ Desktop Sidebar Nav */}
+      {/* 🖥️ Desktop Sidebar Nav */}
 <nav className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 hidden md:flex flex-col gap-6 text-white text-3xl uppercase font-medium font-poppins tracking-wider leading-snug">
   {navItems.map((item, idx) =>
     item.label === 'Our Services' ? (

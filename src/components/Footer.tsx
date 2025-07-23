@@ -166,7 +166,7 @@ const Footer = () => {
         {/* Footer Bottom Bar */}
         <div className="border-t border-gray-800 mt-10 pt-4">
           <p className="text-center text-sm text-gray-400 font-prata">
-            © 2025 Regalia Events. All rights reserved. Licensed & Protected under applicable laws.
+            © 2025 VISIWORLD Events. All rights reserved. Licensed & Protected under applicable laws.
           </p>
         </div>
       </div>
