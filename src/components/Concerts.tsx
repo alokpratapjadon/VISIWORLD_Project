@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import logo from '../Assets/IMG_9055.png';
-import wedding1 from '../Assets/wedding1.jpg';
-import wedding2 from '../Assets/wedding2.jpg';
-import wedding3 from '../Assets/wedding3.jpg';
-import concertVideo from '../Assets/weddingVideo.mp4';
+import wedding1 from '../Assets/consert1.jpg';
+import wedding2 from '../Assets/consert2.jpg';
+import wedding3 from '../Assets/consert3.jpg';
+import concertVideo from '../Assets/consert.mp4';
 
 const Concerts = () => {
   const images = [
