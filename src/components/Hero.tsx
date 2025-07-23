@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import heroVideo from '../Assets/EventVideo.mp4';
 import logo from '../Assets/IMG_9055.png';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -9,12 +10,12 @@ const Hero = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const servicesDropdown = [
-    'Corporate & Social Events',
-    'Conserts',
-    'Destinaqtion Management',
-    'Weddings',
-    'MICE / Corporate Travel',
-    'HOtel & Travel Services',
+    { name: 'Corporate & Social Events', slug: 'corporate-events' },
+    { name: 'Concerts', slug: 'concerts' },
+    { name: 'Destination Management', slug: 'destination-management' },
+    { name: 'Weddings', slug: 'weddings' },
+    { name: 'MICE / Corporate Travel', slug: 'mice-travel' },
+    { name: 'Hotel & Travel Services', slug: 'travel-services' },
   ];
 
   const navItems = [
@@ -23,12 +24,6 @@ const Hero = () => {
     { label: 'Our Recent Events', href: '#portfolio' },
     { label: 'Inquiry', href: '#inquiry' },
   ];
-
-  const handleLinkClick = (href: string) => {
-    setTimeout(() => {
-      window.location.href = href;
-    }, 500);
-  };
 
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden">
@@ -74,16 +69,14 @@ const Hero = () => {
                       className="mt-2 space-y-2 text-sm"
                     >
                       {servicesDropdown.map((sub, i) => (
-                        <li
+                        <Link
                           key={i}
-                          onClick={() => {
-                            setMobileNavOpen(false);
-                            handleLinkClick('#services');
-                          }}
-                          className="hover:text-luxury-gold transition"
+                          to={`/services/${sub.slug}`}
+                          onClick={() => setMobileNavOpen(false)}
+                          className="block hover:text-luxury-gold transition"
                         >
-                          {sub}
-                        </li>
+                          {sub.name}
+                        </Link>
                       ))}
                     </motion.ul>
                   )}
@@ -96,7 +89,7 @@ const Hero = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   setMobileNavOpen(false);
-                  handleLinkClick(item.href);
+                  window.location.href = item.href;
                 }}
                 className="hover:text-luxury-gold transition duration-300 uppercase"
               >
@@ -108,58 +101,57 @@ const Hero = () => {
       </div>
 
       {/* 🖥️ Desktop Sidebar Nav */}
-<nav className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 hidden md:flex flex-col gap-6 text-white text-3xl uppercase font-medium font-poppins tracking-wider leading-snug">
-  {navItems.map((item, idx) =>
-    item.label === 'Our Services' ? (
-      <div
-        key={idx}
-        className="relative group"
-        onMouseEnter={() => setShowDropdown(true)}
-        onMouseLeave={() => setShowDropdown(false)}
-      >
-        <div className="relative pl-5 transition-all duration-300 hover:pl-7 hover:text-luxury-gold cursor-pointer">
-          <span className="absolute left-0 top-1/2 transform -translate-y-1/2 w-[2px] h-5 bg-white"></span>
-          {item.label}
-        </div>
-        
-        {/* Push down items instead of absolute position */}
-        <AnimatePresence>
-          {showDropdown && (
-            <motion.ul
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="ml-6 mt-2 space-y-2 text-base font-light overflow-hidden"
+      <nav className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 hidden md:flex flex-col gap-6 text-white text-3xl uppercase font-medium font-poppins tracking-wider leading-snug">
+        {navItems.map((item, idx) =>
+          item.label === 'Our Services' ? (
+            <div
+              key={idx}
+              className="relative group"
+              onMouseEnter={() => setShowDropdown(true)}
+              onMouseLeave={() => setShowDropdown(false)}
             >
-              {servicesDropdown.map((sub, i) => (
-                <li
-                  key={i}
-                  onClick={() => handleLinkClick('#services')}
-                  className="hover:text-luxury-gold cursor-pointer transition pl-2"
-                >
-                  {sub}
-                </li>
-              ))}
-            </motion.ul>
-          )}
-        </AnimatePresence>
-      </div>
-    ) : (
-      <a
-        key={idx}
-        href={item.href}
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = item.href;
-        }}
-        className="relative pl-5 transition-all duration-300 hover:pl-7 hover:text-luxury-gold"
-      >
-        <span className="absolute left-0 top-1/2 transform -translate-y-1/2 w-[2px] h-5 bg-white"></span>
-        {item.label}
-      </a>
-    )
-  )}
-</nav>
+              <div className="relative pl-5 transition-all duration-300 hover:pl-7 hover:text-luxury-gold cursor-pointer">
+                <span className="absolute left-0 top-1/2 transform -translate-y-1/2 w-[2px] h-5 bg-white"></span>
+                {item.label}
+              </div>
+
+              <AnimatePresence>
+                {showDropdown && (
+                  <motion.ul
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="ml-6 mt-2 space-y-2 text-base font-light overflow-hidden"
+                  >
+                    {servicesDropdown.map((sub, i) => (
+                      <Link
+                        key={i}
+                        to={`/services/${sub.slug}`}
+                        className="block hover:text-luxury-gold cursor-pointer transition pl-2"
+                      >
+                        {sub.name}
+                      </Link>
+                    ))}
+                  </motion.ul>
+                )}
+              </AnimatePresence>
+            </div>
+          ) : (
+            <a
+              key={idx}
+              href={item.href}
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = item.href;
+              }}
+              className="relative pl-5 transition-all duration-300 hover:pl-7 hover:text-luxury-gold"
+            >
+              <span className="absolute left-0 top-1/2 transform -translate-y-1/2 w-[2px] h-5 bg-white"></span>
+              {item.label}
+            </a>
+          )
+        )}
+      </nav>
     </section>
   );
 };
