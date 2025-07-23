@@ -9,12 +9,12 @@ const Hero = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const servicesDropdown = [
-    'Event Planning',
-    'Destination Management',
-    'Wedding Curation',
-    'Corporate Events',
-    'Luxury Travel',
-    'Experiential Retreats',
+    'Corporate & Social Events',
+    'Conserts',
+    'Destinaqtion Management',
+    'Weddings',
+    'MICE / Corporate Travel',
+    'HOtel & Travel Services',
   ];
 
   const navItems = [
