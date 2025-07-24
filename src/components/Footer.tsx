@@ -33,10 +33,10 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-2 gap-x-8 items-start">
 
           {/* Brand Section */}
-          <div className="space-y-4">
+          <div>
             <div className="flex items-center justify-center md:justify-start space-x-4">
               <img
   src={LogoImage}
@@ -118,7 +118,7 @@ const Footer = () => {
           </div>
 
           {/* DESKTOP Sections */}
-          <div className="hidden md:block md:pl-8">
+          <div className="hidden md:block md:pl-20 mt-4">
             <h4 className="text-lg font-semibold mb-4 font-prata">Quick Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
@@ -131,7 +131,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden md:block md:pl-20 mt-4">
             <h4 className="text-lg font-semibold mb-4 font-prata">Services</h4>
             <ul className="space-y-2">
               {services.map((service, index) => (
@@ -144,7 +144,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden md:block md:pl-20 mt-4">
             <h4 className="text-lg font-semibold mb-4 font-prata">Contact Info</h4>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
