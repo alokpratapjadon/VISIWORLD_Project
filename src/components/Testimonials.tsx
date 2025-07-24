@@ -14,28 +14,28 @@ const Testimonials = () => {
       position: "Bride & Groom",
       company: "New Delhi",
       text: "VisiWorld planned our Goa wedding like a dream. The team was proactive, creative, and responsive throughout!",
-      image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+      image: "/src/Assets/testimonial1.jpg"
     },
     {
       name: "Rajiv Mehra",
       position: "Corporate Client",
       company: "Product Launch – Pan India",
       text: "Smooth execution of our pan-India product launch. VisiWorld managed everything with professionalism.",
-      image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+      image: "/src/Assets/testimonial2.webp"
     },
     {
       name: "Ananya D.",
       position: "Event Head",
       company: "College Fest – Mumbai",
       text: "Our college fest concert was epic—lighting, sound, security all top-notch!",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+      image: "/src/Assets/testimonial4.jpg"
     },
     {
       name: "Priya & Karan",
       position: "Anniversary Clients",
       company: "Udaipur",
       text: "Our luxury anniversary event in Udaipur was a fairy tale. Every detail from decor to timing was flawless. VisiWorld truly made it unforgettable!",
-      image: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+      image: "/src/Assets/testimonial3.webp"
     }
   ];
 

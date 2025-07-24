@@ -6,7 +6,7 @@ import video1 from '../Assets/dj.mp4';
 import video2 from '../Assets/see.mp4';
 import video3 from '../Assets/sea.mp4';
 import video4 from '../Assets/IMG_9056.mp4';
-import video5 from '../Assets/meeting.mp4';
+// import video5 from '../Assets/meeting.mp4';
 
 const About = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
@@ -18,7 +18,7 @@ const About = () => {
   const videoTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const contentTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const videos = [video2, video1, video3, video4, video5];
+  const videos = [video2, video1, video3, video4];
 
   const contentSections = [
     {
