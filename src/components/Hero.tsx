@@ -22,7 +22,7 @@ const Hero = () => {
     { label: 'About Us', href: '#about' },
     { label: 'Our Services', href: '#services' },
     { label: 'Our Recent Events', href: '#portfolio' },
-    { label: 'Inquiry', href: '#inquiry' },
+    { label: 'Enquiry', href: '#contact' },
   ];
 
   return (
@@ -83,18 +83,25 @@ const Hero = () => {
                 </AnimatePresence>
               </div>
             ) : (
-              <a
-                key={idx}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setMobileNavOpen(false);
-                  window.location.href = item.href;
-                }}
-                className="hover:text-luxury-gold transition duration-300 uppercase"
-              >
-                {item.label}
-              </a>
+                <a
+                  key={idx}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMobileNavOpen(false);
+                    if (item.label === 'Enquiry') {
+                      const contactSection = document.getElementById('contact');
+                      if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    } else {
+                      window.location.href = item.href;
+                    }
+                  }}
+                  className="hover:text-luxury-gold transition duration-300 uppercase"
+                >
+                  {item.label}
+                </a>
             )
           ))}
         </div>
@@ -137,18 +144,25 @@ const Hero = () => {
               </AnimatePresence>
             </div>
           ) : (
-            <a
-              key={idx}
-              href={item.href}
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.href = item.href;
-              }}
-              className="relative pl-5 transition-all duration-300 hover:pl-7 hover:text-luxury-gold"
-            >
-              <span className="absolute left-0 top-1/2 transform -translate-y-1/2 w-[2px] h-5 bg-white"></span>
-              {item.label}
-            </a>
+                <a
+                  key={idx}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (item.label === 'Enquiry') {
+                      const contactSection = document.getElementById('contact');
+                      if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    } else {
+                      window.location.href = item.href;
+                    }
+                  }}
+                  className="relative pl-5 transition-all duration-300 hover:pl-7 hover:text-luxury-gold"
+                >
+                  <span className="absolute left-0 top-1/2 transform -translate-y-1/2 w-[2px] h-5 bg-white"></span>
+                  {item.label}
+                </a>
           )
         )}
       </nav>
