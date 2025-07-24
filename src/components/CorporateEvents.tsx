@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import logo from '../Assets/IMG_9055.png';
 import corporate1 from '../Assets/corporate1.jpg';
@@ -17,7 +18,9 @@ const CorporateEvents = () => {
     <div className="bg-[#fcf9ed] text-[#333] font-poppins relative">
       {/* Logo */}
       <div className="absolute top-6 left-6 z-30">
-        <img src={logo} alt="Visiworld Logo" className="h-24 w-auto md:h-28" />
+        <Link to="/">
+          <img src={logo} alt="Visiworld Logo" className="h-24 w-auto md:h-28" />
+        </Link>
       </div>
 
       {/* Hero Section */}
