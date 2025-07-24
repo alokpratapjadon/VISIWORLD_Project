@@ -118,9 +118,17 @@ const About = () => {
               <h3 className="text-2xl md:text-3xl font-light text-gray-900 mb-4 md:mb-6 font-poppins">
                 {contentSections[currentContentIndex].title}
               </h3>
-              <p className="text-base md:text-lg text-gray-700 leading-relaxed font-poppins mb-6">
-                {contentSections[currentContentIndex].content}
-              </p>
+              {contentSections[currentContentIndex].title === "Why Choose Us" ? (
+                <ul className="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed font-poppins mb-6 whitespace-pre-line">
+                  {contentSections[currentContentIndex].content.split('\n').map((point, idx) => (
+                    <li key={idx}>{point.replace('• ', '')}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-base md:text-lg text-gray-700 leading-relaxed font-poppins mb-6">
+                  {contentSections[currentContentIndex].content}
+                </p>
+              )}
 
               <div className={`flex items-center justify-between transition-opacity duration-300 ${
                 showArrows ? 'opacity-100' : 'opacity-0'
