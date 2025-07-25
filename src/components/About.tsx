@@ -120,7 +120,7 @@ const About = () => {
           </div>
 
           {/* Right Images Grid */}
-          <div className="relative h-64 md:h-96 bg-black shadow-xl overflow-hidden cursor-pointer" onClick={handleInteraction} onTouchStart={handleInteraction}>
+          <div className="hidden md:block relative h-64 md:h-96 bg-black shadow-xl overflow-hidden cursor-pointer" onClick={handleInteraction} onTouchStart={handleInteraction}>
             <img
               src={images[currentContentIndex]}
               alt={`Service ${currentContentIndex + 1}`}
