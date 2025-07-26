@@ -1,0 +1,152 @@
+<div className="relative absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-6 py-4 md:px-10">
+        <img src={oldLogo} alt="Old Brand Logo" className="h-20 md:h-28 lg:h-32 w-auto object-contain" />
+        <button className="md:hidden text-white z-50" onClick={() => setMobileNavOpen(!mobileNavOpen)}>
+          {mobileNavOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+        <div className="absolute left-0 right-0 flex justify-center pointer-events-none">
+          <img src={newLogo} alt="New Centered Logo" className="h-20 md:h-28 lg:h-32 w-auto object-contain" />
+        </div>
+      </div>
+
+      {/* 🔻 Mobile Dropdown Menu */}
+      <div className={`absolute top-[72px] left-0 w-full z-40 transition-all duration-500 ease-in-out transform bg-black/90 backdrop-blur-md ${mobileNavOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10 pointer-events-none'}`}>
+        <div className="flex flex-col items-center text-white gap-6 py-8 px-4 text-lg font-poppins">
+          {navItems.map((item, idx) => (
+            item.label === 'Our Services' ? (
+              <div key={idx} className="relative w-full text-center">
+                <div onClick={() => setShowDropdown(!showDropdown)} className="flex justify-center items-center gap-1 cursor-pointer uppercase">
+                  {item.label} <ChevronDown size={16} />
+                </div>
+                <AnimatePresence>
+                  {showDropdown && (
+                    <motion.ul
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="mt-2 space-y-2 text-sm"
+                    >
+                      {servicesDropdown.map((sub, i) => (
+                        <Link
+                          key={i}
+                          to={`/services/${sub.slug}`}
+                          onClick={() => setMobileNavOpen(false)}
+                          className="block hover:text-luxury-gold transition"
+                        >
+                          {sub.name}
+                        </Link>
+                      ))}
+                    </motion.ul>
+                  )}
+                </AnimatePresence>
+              </div>
+            ) : (
+                <a
+                  key={idx}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMobileNavOpen(false);
+                    if (item.label === 'Enquiry') {
+                      const contactSection = document.getElementById('contact');
+                      if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    } else {
+                      window.location.href = item.href;
+                    }
+                  }}
+                  className="hover:text-luxury-gold transition duration-300 uppercase"
+                >
+                  {item.label}
+                </a>
+            )
+          ))}
+        </div>
+      </div>
+=======
+      {/* Top Bar with Old Logo and Menu */}
+      <div className="relative absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-6 py-4 md:px-10 bg-black/80 backdrop-blur-md">
+        <img src={oldLogo} alt="Old Brand Logo" className="h-20 md:h-28 lg:h-32 w-auto object-contain" />
+        <button className="md:hidden text-white z-50" onClick={() => setMobileNavOpen(!mobileNavOpen)}>
+          {mobileNavOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+        <div className="absolute left-1/2 transform -translate-x-1/2 pointer-events-none">
+          <img src={newLogo} alt="New Centered Logo" className="h-20 md:h-28 lg:h-32 w-auto object-contain" />
+        </div>
+      </div>
+
+      {/* 🔻 Mobile Slide-in Drawer Menu */}
+      <AnimatePresence>
+        {mobileNavOpen && (
+          <motion.div
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+            className="fixed top-0 right-0 h-full w-64 bg-black/90 backdrop-blur-md z-40 shadow-lg flex flex-col py-8 px-6 text-white"
+          >
+            <button
+              className="self-end mb-6 text-white"
+              onClick={() => setMobileNavOpen(false)}
+              aria-label="Close menu"
+            >
+              <X size={28} />
+            </button>
+            <nav className="flex flex-col gap-6 text-lg font-poppins uppercase">
+              {navItems.map((item, idx) =>
+                item.label === 'Our Services' ? (
+                  <div key={idx} className="relative">
+                    <div
+                      onClick={() => setShowDropdown(!showDropdown)}
+                      className="flex justify-between items-center cursor-pointer"
+                    >
+                      {item.label} <ChevronDown size={16} />
+                    </div>
+                    <AnimatePresence>
+                      {showDropdown && (
+                        <motion.ul
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="mt-2 space-y-2 text-sm pl-4"
+                        >
+                          {servicesDropdown.map((sub, i) => (
+                            <Link
+                              key={i}
+                              to={`/services/${sub.slug}`}
+                              onClick={() => setMobileNavOpen(false)}
+                              className="block hover:text-luxury-gold transition"
+                            >
+                              {sub.name}
+                            </Link>
+                          ))}
+                        </motion.ul>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <a
+                    key={idx}
+                    href={item.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setMobileNavOpen(false);
+                      if (item.label === 'Enquiry') {
+                        const contactSection = document.getElementById('contact');
+                        if (contactSection) {
+                          contactSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      } else {
+                        window.location.href = item.href;
+                      }
+                    }}
+                    className="hover:text-luxury-gold transition duration-300"
+                  >
+                    {item.label}
+                  </a>
+                )
+              )}
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>

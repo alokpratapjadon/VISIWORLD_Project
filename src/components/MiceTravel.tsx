@@ -4,7 +4,7 @@ import logo from '../Assets/IMG_9055.png';
 import wedding1 from '../Assets/wedding1.jpg';
 import wedding2 from '../Assets/wedding2.jpg';
 import wedding3 from '../Assets/wedding3.jpg';
-import miceTravelVideo from '../Assets/weddingVideo.mp4';
+import miceTravelVideo from '../Assets/MICE.mp4';
 
 const MiceTravel = () => {
   const images = [

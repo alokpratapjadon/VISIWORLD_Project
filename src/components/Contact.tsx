@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Send } from 'lucide-react';
+import EventDomainDropdown from './EventDomainDropdown';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+    eventDomain: ''
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -13,8 +15,7 @@ const Contact = () => {
     console.log('Form submitted:', formData);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
+  const handleChange = (name: string, value: string) => {
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -82,7 +83,7 @@ const Contact = () => {
                       name="name"
                       placeholder="Your Name"
                       value={formData.name}
-                      onChange={handleChange}
+                      onChange={e => handleChange(e.target.name, e.target.value)}
                       className="w-full px-0 py-3 md:py-4 bg-transparent border-0 border-b-2 border-gray-300 focus:border-luxury-gold focus:outline-none text-gray-900 placeholder-gray-500 text-base md:text-lg font-prata transition-all duration-300"
                       required
                     />
@@ -94,9 +95,16 @@ const Contact = () => {
                       name="email"
                       placeholder="Your Email"
                       value={formData.email}
-                      onChange={handleChange}
+                      onChange={e => handleChange(e.target.name, e.target.value)}
                       className="w-full px-0 py-3 md:py-4 bg-transparent border-0 border-b-2 border-gray-300 focus:border-luxury-gold focus:outline-none text-gray-900 placeholder-gray-500 text-base md:text-lg font-prata transition-all duration-300"
                       required
+                    />
+                  </div>
+
+                  <div>
+                    <EventDomainDropdown
+                      value={formData.eventDomain}
+                      onChange={val => handleChange('eventDomain', val)}
                     />
                   </div>
 
@@ -105,7 +113,7 @@ const Contact = () => {
                       name="message"
                       placeholder="Your Message"
                       value={formData.message}
-                      onChange={handleChange}
+                      onChange={e => handleChange(e.target.name, e.target.value)}
                       rows={6}
                       className="w-full px-0 py-3 md:py-4 bg-transparent border-0 border-b-2 border-gray-300 focus:border-luxury-gold focus:outline-none text-gray-900 placeholder-gray-500 resize-none text-base md:text-lg font-prata transition-all duration-300"
                       required

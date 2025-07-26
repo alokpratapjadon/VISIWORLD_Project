@@ -56,28 +56,35 @@ const Hero = () => {
       </div>
 
       {/* 🔻 Mobile Dropdown Menu */}
-      <div className={`absolute top-[72px] left-0 w-full z-40 transition-all duration-500 ease-in-out transform bg-black/90 backdrop-blur-md ${mobileNavOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10 pointer-events-none'}`}>
-        <div className="flex flex-col items-center text-white gap-6 py-8 px-4 text-lg font-poppins">
+      <div className={`fixed inset-0 z-50 bg-white overflow-y-auto ${mobileNavOpen ? 'block' : 'hidden'}`}>
+        <div className="flex justify-between items-center px-6 py-4 border-b border-luxury-gold">
+          <div className="text-xl font-semibold text-luxury-gold">VISIWORLD</div>
+          <button onClick={() => setMobileNavOpen(false)} aria-label="Close menu" className="text-luxury-gold">
+            <X size={28} />
+          </button>
+        </div>
+        <div className="flex flex-col divide-y divide-luxury-gold text-luxury-black text-lg font-poppins">
           {navItems.map((item, idx) => (
             item.label === 'Our Services' ? (
-              <div key={idx} className="relative w-full text-center">
-                <div onClick={() => setShowDropdown(!showDropdown)} className="flex justify-center items-center gap-1 cursor-pointer uppercase">
-                  {item.label} <ChevronDown size={16} />
+              <div key={idx} className="relative w-full">
+                <div onClick={() => setShowDropdown(!showDropdown)} className="flex justify-between items-center cursor-pointer uppercase px-6 py-4">
+                  <span>{item.label}</span>
+                  <ChevronDown size={20} />
                 </div>
                 <AnimatePresence>
                   {showDropdown && (
                     <motion.ul
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      className="mt-2 space-y-2 text-sm"
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto', transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] } }}
+                      exit={{ opacity: 0, height: 0, transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] } }}
+                      className="bg-white"
                     >
                       {servicesDropdown.map((sub, i) => (
                         <Link
                           key={i}
                           to={`/services/${sub.slug}`}
                           onClick={() => setMobileNavOpen(false)}
-                          className="block hover:text-luxury-gold transition"
+                          className="block px-8 py-3 hover:bg-luxury-gold/10 transition"
                         >
                           {sub.name}
                         </Link>
@@ -87,27 +94,37 @@ const Hero = () => {
                 </AnimatePresence>
               </div>
             ) : (
-                <a
-                  key={idx}
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setMobileNavOpen(false);
-                    if (item.label === 'Enquiry') {
-                      const contactSection = document.getElementById('contact');
-                      if (contactSection) {
-                        contactSection.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    } else {
-                      window.location.href = item.href;
+              <a
+                key={idx}
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMobileNavOpen(false);
+                  if (item.label === 'Enquiry') {
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: 'smooth' });
                     }
-                  }}
-                  className="hover:text-luxury-gold transition duration-300 uppercase"
-                >
-                  {item.label}
-                </a>
+                  } else {
+                    window.location.href = item.href;
+                  }
+                }}
+                className="block px-6 py-4 hover:bg-luxury-gold/10 transition uppercase"
+              >
+                {item.label}
+              </a>
             )
           ))}
+        </div>
+        {/* Close button at bottom center */}
+        <div className="fixed bottom-4 left-0 right-0 px-4">
+          <button
+            onClick={() => setMobileNavOpen(false)}
+            aria-label="Close menu"
+            className="w-full py-3 text-luxury-gold border border-luxury-gold rounded-full hover:bg-luxury-gold hover:text-white transition"
+          >
+            Close
+          </button>
         </div>
       </div>
 
