@@ -41,7 +41,7 @@ const Hero = () => {
         style={{ translateY }}
         className="absolute bottom-10 left-4 right-4 z-20 font-poppins text-left block md:hidden"
       >
-        <h2 className="font-bold text-5xl mb-2 text-white/60">Crafting Unforgettable Experiences</h2>
+        <h2 className="font-bold text-5xl mb-2 text-white/60">Crafting Timeless Memories</h2>
         <p className="text-sm leading-snug whitespace-pre-line text-white/50">
           Creating extraordinary experiences and unforgettable moments{'\n'}
           through luxury event management and bespoke celebrations.
