@@ -17,11 +17,16 @@ module.exports = {
       },
       animation: {
         'zoom-slow': 'zoomSlow 20s ease-in-out infinite',
+        'pop-in': 'popIn 0.6s ease forwards',
       },
       keyframes: {
         zoomSlow: {
           '0%, 100%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.05)' },
+        },
+        popIn: {
+          '0%': { opacity: '0', transform: 'scale(0.8)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
         },
       },
     },
