@@ -4,6 +4,7 @@ import heroVideo from '../Assets/EventVideo.mp4';
 import oldLogo from '../Assets/IMG_9055.png';
 import newLogo from '../Assets/centerheronav.png';
 import MobileMenu from './MobileMenu';
+import DesktopMenu from './DesktopMenu';
 
 const Hero = () => {
   const { scrollY } = useViewportScroll();
@@ -41,10 +42,11 @@ const Hero = () => {
         style={{ translateY }}
         className="absolute bottom-10 left-4 right-4 z-20 font-poppins text-left block md:hidden"
       >
-        <h2 className="font-bold text-5xl mb-2 text-white/60">Crafting Timeless Memories</h2>
-        <p className="text-sm leading-snug whitespace-pre-line text-white/50">
-          Creating extraordinary experiences and unforgettable moments{'\n'}
-          through luxury event management and bespoke celebrations.
+        <h2 className="font-bold text-5xl mb-2 text-white/80">Crafting Grand Experiences</h2>
+        <p className="text-base leading-relaxed whitespace-pre-line text-white/70">
+          Creating extraordinary experiences and {'\n'}
+          unforgettable moments through{'\n'}
+          luxury event management and bespoke celebrations.
         </p>
       </motion.div>
 
@@ -57,9 +59,9 @@ const Hero = () => {
       </div>
 
       <MobileMenu />
-
-      {/* 🖥️ Desktop Sidebar Nav */}
-      {/* (Desktop sidebar nav code unchanged) */}
+      <div className="relative z-20 flex flex-col justify-center h-screen">
+        <DesktopMenu />
+      </div>
     </section>
   );
 };
