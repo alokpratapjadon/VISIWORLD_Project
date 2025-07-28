@@ -1,9 +1,5 @@
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, X, Whatsapp } from 'lucide-react';
 import LogoImage from '../Assets/IMG_9055.png';
-import FacebookIcon from '../Assets/facebook.webp';
-import InstagramIcon from '../Assets/instagram.png';
-import XIcon from '../Assets/X.webp';
-import WhatsAppIcon from '../Assets/whatsapp.webp';
 
 const Footer = () => {
   const quickLinks = [
@@ -24,10 +20,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: FacebookIcon, link: 'https://facebook.com' },
-    { icon: InstagramIcon, link: 'https://instagram.com' },
-    { icon: XIcon, link: 'https://x.com' },
-    { icon: WhatsAppIcon, link: 'https://wa.me' }
+    { name: 'Facebook', icon: Facebook, link: 'https://facebook.com' },
+    { name: 'Instagram', icon: Instagram, link: 'https://instagram.com' },
+    { name: 'X', icon: X, link: 'https://x.com' },
+    { name: 'WhatsApp', icon: Whatsapp, link: 'https://wa.me' }
   ];
 
   return (
@@ -39,40 +35,40 @@ const Footer = () => {
           <div>
             <div className="flex items-center justify-center md:justify-start space-x-4">
               <img
-  src={LogoImage}
-  alt="Visiworld Logo"
-  className="w-28 h-28 md:w-32 md:h-32 rounded-full shadow-md object-cover"
-/>
+                src={LogoImage}
+                alt="Visiworld Logo"
+                className="w-28 h-28 md:w-32 md:h-32 rounded-full shadow-md object-cover"
+              />
               <div>
-                <h3 className="text-xl md:text-2xl font-bold font-prata text-center md:text-left">VISIWORLD</h3>
-                <p className="text-[10px] text-gray-400 uppercase tracking-wide font-prata text-center md:text-left">
+                <h3 className="text-xl md:text-2xl font-bold font-poppins text-center md:text-left">VISIWORLD</h3>
+                <p className="text-[10px] text-gray-400 uppercase tracking-wide font-poppins text-center md:text-left">
                   Crafting Unforgettable Moments
                 </p>
               </div>
             </div>
 
-            <div className="text-sm text-gray-300 font-prata text-center md:text-left leading-snug">
+            <div className="text-sm text-gray-300 font-poppins text-center md:text-left leading-snug">
               <p>Creating extraordinary experiences</p>
               <p>and unforgettable moments through</p>
               <p>luxury event management and bespoke celebrations.</p>
             </div>
 
             <div className="flex justify-center md:justify-start space-x-4 mt-3">
-              {socialLinks.map((item, idx) => (
-                <a
-                  key={idx}
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:scale-110 transition-transform duration-300"
-                >
-                  <img
-                    src={item.icon}
-                    alt={`social-icon-${idx}`}
-                    className="w-10 h-10 object-contain"
-                  />
-                </a>
-              ))}
+              {socialLinks.map((item, idx) => {
+                const IconComponent = item.icon;
+                return (
+                  <a
+                    key={idx}
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={item.name}
+                    className="hover:scale-110 transition-transform duration-300 rounded-full border border-gray-500 p-2 flex items-center justify-center font-normal"
+                  >
+                    <IconComponent className="w-6 h-6 text-gray-300" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
@@ -80,11 +76,11 @@ const Footer = () => {
           <div className="md:hidden flex justify-center mt-10 gap-6 text-center">
             {/* Quick Links */}
             <div>
-              <h4 className="text-base font-semibold mb-2 font-prata">Quick Links</h4>
+              <h4 className="text-base font-semibold mb-2 font-poppins">Quick Links</h4>
               <ul className="space-y-1">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <a href={link.href} className="text-xs text-gray-300 hover:text-luxury-gold transition-colors font-prata">
+                    <a href={link.href} className="text-xs text-gray-300 hover:text-luxury-gold transition-colors font-poppins">
                       {link.name}
                     </a>
                   </li>
@@ -94,11 +90,11 @@ const Footer = () => {
 
             {/* Services */}
             <div>
-              <h4 className="text-base font-semibold mb-2 font-prata">Services</h4>
+              <h4 className="text-base font-semibold mb-2 font-poppins">Services</h4>
               <ul className="space-y-1">
                 {services.slice(0, 5).map((service, index) => (
                   <li key={index}>
-                    <a href="#services" className="text-xs text-gray-300 hover:text-luxury-gold transition-colors font-prata">
+                    <a href="#services" className="text-xs text-gray-300 hover:text-luxury-gold transition-colors font-poppins">
                       {service}
                     </a>
                   </li>
@@ -108,11 +104,11 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div>
-              <h4 className="text-base font-semibold mb-2 font-prata">Contact</h4>
+              <h4 className="text-base font-semibold mb-2 font-poppins">Contact</h4>
               <div className="space-y-2">
-                <p className="text-xs text-gray-300 font-prata">+91 0000000000</p>
-                <p className="text-xs text-gray-300 font-prata">hello@yourevents.com</p>
-                <p className="text-xs text-gray-300 font-prata">New Delhi, India</p>
+                <p className="text-xs text-gray-300 font-poppins">+91 0000000000</p>
+                <p className="text-xs text-gray-300 font-poppins">hello@yourevents.com</p>
+                <p className="text-xs text-gray-300 font-poppins">New Delhi, India</p>
               </div>
             </div>
           </div>
@@ -165,7 +161,7 @@ const Footer = () => {
 
         {/* Footer Bottom Bar */}
         <div className="border-t border-gray-800 mt-10 pt-4">
-          <p className="text-center text-sm text-gray-400 font-prata">
+          <p className="text-center text-sm text-gray-400 font-poppins" style={{ fontFamily: 'Poppins, sans-serif' }}>
             © 2025 VISIWORLD Events. All rights reserved. Licensed & Protected under applicable laws.
           </p>
         </div>
