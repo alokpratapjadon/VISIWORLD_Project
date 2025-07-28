@@ -4,7 +4,6 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-// Images
 import WeddingEvent from "../Assets/wedding.jpg";
 import MusicFestival from "../Assets/music.jpg.webp";
 import ProductLaunch from "../Assets/event.webp";
@@ -21,97 +20,86 @@ const portfolioItems = [
 
 const Portfolio = () => {
   return (
-    <section id="portfolio" className="py-12 md:py-20 bg-gray-50 relative">
-      {/* Decorative Curves */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden z-0">
-        <svg className="w-full h-16" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M0,0 C300,120 900,120 1200,0 L1200,120 L0,120 Z" fill="white" />
-        </svg>
-      </div>
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden z-0">
-        <svg className="w-full h-16" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M0,120 C300,0 900,0 1200,120 L1200,0 L0,0 Z" fill="white" />
-        </svg>
-      </div>
-
+    <section id="portfolio" className="py-12 md:py-20 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-white/50 backdrop-blur-md rounded-xl p-6 md:p-10 shadow-xl">
-          <div className="text-center mb-12 md:mb-16">
-            <p className="text-luxury-gold font-medium text-2xl md:text-2xl uppercase tracking-wide mb-4 font-poppins">
-              RECENT SERVICES
-            </p>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-8 md:mb-12 font-poppins">
-              Innovation Meets Celebration
-            </h2>
+        <div className="text-center mb-12 md:mb-16">
+          <p className="text-luxury-gold font-medium text-2xl md:text-2xl uppercase tracking-wide mb-4 font-poppins">
+            RECENT SERVICES
+          </p>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-8 md:mb-12 font-poppins">
+            Innovation Meets Celebration
+          </h2>
+        </div>
+
+        {/* Swiper */}
+        <div className="relative">
+          {/* Custom Arrows */}
+          <div className="absolute z-20 top-1/2 -translate-y-1/2 left-0 pl-1 hidden md:flex">
+            <div className="swiper-button-prev-custom bg-white shadow p-2 rounded-full hover:scale-110 transition-all cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 stroke-black" fill="none" viewBox="0 0 24 24" strokeWidth="2">
+                <path d="M15 18L9 12l6-6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+          </div>
+          <div className="absolute z-20 top-1/2 -translate-y-1/2 right-0 pr-1 hidden md:flex">
+            <div className="swiper-button-next-custom bg-white shadow p-2 rounded-full hover:scale-110 transition-all cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 stroke-black" fill="none" viewBox="0 0 24 24" strokeWidth="2">
+                <path d="M9 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
           </div>
 
-          <div className="relative">
-            {/* Custom Arrows */}
-            <div className="absolute z-20 top-1/2 -translate-y-1/2 left-0 pl-1 hidden md:flex">
-              <div className="swiper-button-prev-custom backdrop-blur-md bg-white/60 p-2 rounded-full shadow hover:scale-110 transition-all cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 stroke-black" fill="none" viewBox="0 0 24 24" strokeWidth="2">
-                  <path d="m15 18-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-            </div>
-            <div className="absolute z-20 top-1/2 -translate-y-1/2 right-0 pr-1 hidden md:flex">
-              <div className="swiper-button-next-custom backdrop-blur-md bg-white/60 p-2 rounded-full shadow hover:scale-110 transition-all cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 stroke-black" fill="none" viewBox="0 0 24 24" strokeWidth="2">
-                  <path d="m9 18 6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-            </div>
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            loop={true}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            navigation={{
+              nextEl: '.swiper-button-next-custom',
+              prevEl: '.swiper-button-prev-custom',
+            }}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+                centeredSlides: false,
+              },
+              768: {
+                slidesPerView: 2,
+                centeredSlides: true,
+              },
+              1024: {
+                slidesPerView: 3,
+                centeredSlides: true,
+              },
+            }}
+            spaceBetween={30}
+            className="max-w-full"
+          >
+            {portfolioItems.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div className="relative w-full h-[480px] overflow-hidden group">
+                  {/* Background Image */}
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition duration-700 ease-in-out"
+                  />
 
-            {/* Swiper */}
-            <Swiper
-              modules={[Navigation, Autoplay]}
-              loop={true}
-              autoplay={{ delay: 5000, disableOnInteraction: false }}
-              navigation={{
-                nextEl: '.swiper-button-next-custom',
-                prevEl: '.swiper-button-prev-custom',
-              }}
-              breakpoints={{
-                0: {
-                  slidesPerView: 1,
-                  centeredSlides: false,
-                },
-                768: {
-                  slidesPerView: 2,
-                  centeredSlides: true,
-                },
-                1024: {
-                  slidesPerView: 3,
-                  centeredSlides: true,
-                }
-              }}
-              spaceBetween={30}
-              className="max-w-full"
-            >
-              {portfolioItems.map((item, index) => (
-                <SwiperSlide key={index}>
-                  <div className="relative mx-auto w-72 md:w-80 h-48 md:h-56 rounded-xl cursor-pointer group overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-700">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover rounded-xl transition-transform duration-1000 ease-in-out group-hover:scale-110"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white bg-gradient-to-t from-black/40 to-transparent">
-                      <h3
-                        className={`text-lg md:text-xl font-light font-poppins ${
-                          item.title === "Destination Wedding"
-                            ? "drop-shadow-[1px_1px_1px_rgba(0,0,0,0.8)]"
-                            : ""
-                        }`}
-                      >
-                        {item.title}
-                      </h3>
-                    </div>
+                  {/* Animated Curved Color Overlay Top Left */}
+                  <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-red-500 z-10 rounded-br-[450px] -translate-x-full -translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-700 ease-in-out opacity-80" style={{clipPath: 'polygon(0 0, 100% 0, 0 100%)'}} />
+                  
+                  {/* Animated Curved Color Overlay Bottom Right */}
+                  <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-red-600 z-10 rounded-tl-[450px] translate-x-full translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-700 ease-in-out opacity-80" style={{clipPath: 'polygon(100% 100%, 100% 0, 0 100%)'}} />
+
+                  {/* Title Text */}
+                  <div className="absolute bottom-6 left-6 z-20 transition-transform duration-700 ease-in-out group-hover:-translate-y-4">
+                    <h3 className="text-white text-2xl font-bold drop-shadow-md">
+                      {item.title}
+                    </h3>
                   </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>

@@ -5,6 +5,7 @@ import testimonial1 from '../Assets/testimonial1.jpg';
 import testimonial2 from '../Assets/testimonial2.webp';
 import testimonial3 from '../Assets/testimonial3.webp';
 import testimonial4 from '../Assets/testimonial4.jpg';
+import priyaKaran from '../Assets/priya and karan.jpeg';
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,7 +41,7 @@ const Testimonials = () => {
       position: "Anniversary Clients",
       company: "Udaipur",
       text: "Our luxury anniversary event in Udaipur was a fairy tale. Every detail from decor to timing was flawless. VisiWorld truly made it unforgettable!",
-      image: testimonial3
+      image: priyaKaran
     }
   ];
 
