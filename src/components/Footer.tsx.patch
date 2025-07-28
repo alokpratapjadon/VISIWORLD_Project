@@ -1,37 +1,52 @@
-<<<<<<< import LogoImage from '../Assets/IMG_9055.png';
-import FacebookIcon from '../Assets/facebook.webp';
-import InstagramIcon from '../Assets/instagram.png';
-import XIcon from '../Assets/X.webp';
-import WhatsAppIcon from '../Assets/whatsapp.webp';
+'Corporate & Social Events',
+    'Concerts',
+    'Destination Management',
+    'Weddings',
+    'MICE / Corporate Travel',
+    'Hotel Booking & Visa Services'
+  ];
 =======
-import { Link } from 'react-router-dom';
-import LogoImage from '../Assets/IMG_9055.png';
-import FacebookIcon from '../Assets/facebook.webp';
-import InstagramIcon from '../Assets/instagram.png';
-import XIcon from '../Assets/X.webp';
-import WhatsAppIcon from '../Assets/whatsapp.webp';
->>>>>>> import LogoImage from '../Assets/IMG_9055.png';
-import FacebookIcon from '../Assets/facebook.webp';
-import InstagramIcon from '../Assets/instagram.png';
-import XIcon from '../Assets/X.webp';
-import WhatsAppIcon from '../Assets/whatsapp.webp';
+  const services = [
+    { name: 'Corporate & Social Events', href: '/services/corporate-events' },
+    { name: 'Concerts', href: '/services/concerts' },
+    { name: 'Destination Management', href: '/services/destination-management' },
+    { name: 'Weddings', href: '/services/weddings' },
+    { name: 'MICE / Corporate Travel', href: '/services/mice-travel' },
+    { name: 'Hotel Booking & Visa Services', href: '/services/travel-services' }
+  ];
+>>>>>>> REPLACE
 
-<<<<<<<
-              <div className="flex items-center justify-center md:justify-start space-x-4">
-                <img
-  src={LogoImage}
-  alt="Visiworld Logo"
-  className="w-28 h-28 md:w-32 md:h-32 rounded-full shadow-md object-cover"
-/>
-              </div>
+<<<<<<< SEARCH
+                {services.slice(0, 5).map((service, index) => (
+                  <li key={index}>
+                    <a href="#services" className="text-xs text-gray-300 hover:text-luxury-gold transition-colors">
+                      {service}
+                    </a>
+                  </li>
+                ))}
 =======
-              <div className="flex items-center justify-center md:justify-start space-x-4">
-                <Link to="/">
-                  <img
-                    src={LogoImage}
-                    alt="Visiworld Logo"
-                    className="w-28 h-28 md:w-32 md:h-32 rounded-full shadow-md object-cover"
-                  />
-                </Link>
-              </div>
->>>>>>>
+                {services.slice(0, 5).map((service, index) => (
+                  <li key={index}>
+                    <a href={service.href} className="text-xs text-gray-300 hover:text-luxury-gold transition-colors">
+                      {service.name}
+                    </a>
+                  </li>
+                ))}
+>>>>>>> REPLACE
+
+<<<<<<< SEARCH
+              {services.map((service, index) => (
+                <li key={index}>
+                  <a href="#services" className="text-sm text-gray-300 hover:text-luxury-gold transition-colors font-poppins">
+                    {service}
+                  </a>
+                </li>
+              ))}
+=======
+              {services.map((service, index) => (
+                <li key={index}>
+                  <a href={service.href} className="text-sm text-gray-300 hover:text-luxury-gold transition-colors font-poppins">
+                    {service.name}
+                  </a>
+                </li>
+              ))}
