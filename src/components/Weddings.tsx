@@ -8,13 +8,16 @@ import weddingVideo from '../Assets/weddingVideo.mp4';
 
 const Weddings = () => {
   const images = [
-    { src: wedding1, title: 'Royal Palace Wedding', desc: 'Udaipur, 2024' },
-    { src: wedding2, title: 'Beachside Ceremony', desc: 'Goa, 2023' },
-    { src: wedding3, title: 'Cultural Wedding', desc: 'Delhi NCR, 2024' },
+    { src: wedding1, title: 'Royal destination wedding', desc: '' },
+    { src: wedding2, title: 'Anniversary celebration with celebrity performance', desc: '' },
+    { src: wedding3, title: 'Themed birthday party with customized décor', desc: '' },
   ];
 
   return (
-    <div className="bg-[#fcf9ed] text-[#333] font-poppins relative">
+<div className="bg-white text-[#333] font-poppins relative overflow-hidden">
+      {/* Background animation */}
+      <div className="absolute inset-0 bg-gradient-to-r from-yellow-200 via-yellow-100 to-yellow-200 animate-gradient-x opacity-20 pointer-events-none"></div>
+
       {/* Logo */}
       <div className="absolute top-6 left-6 z-30">
         <Link to="/">
@@ -43,7 +46,7 @@ const Weddings = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            WEDDINGS REIMAGINED
+            WEDDINGS & PRIVATE CELEBRATIONS
           </motion.h1>
           <motion.p
             className="text-white text-lg md:text-xl max-w-2xl font-medium"
@@ -51,29 +54,41 @@ const Weddings = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            From royal destination weddings to luxury rituals — we make your dream celebration a reality, anywhere in India.
+            Complete arrangements for weddings, anniversaries, birthdays, and other family events, including décor and entertainment.
           </motion.p>
         </div>
       </section>
 
       {/* What We Offer Section */}
-      <section className="py-20 px-6 md:px-20 bg-[#fffaf0]">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 bg-gradient-to-r from-yellow-500 to-yellow-300 text-transparent bg-clip-text">
+      <section className="py-20 px-6 md:px-20 bg-white relative z-10">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-yellow-600 font-poppins">
           What We Offer
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {[
             {
-              title: 'Destination Weddings',
-              text: 'Majestic palace weddings, serene beach vows, or mountain ceremonies — we plan it all.',
+              title: 'Full wedding planning (concept to execution)',
+              text: 'From initial concept to flawless execution, we handle every detail.',
             },
             {
-              title: 'Luxury Decor',
-              text: 'Handcrafted floral installations, royal mandaps, and ambient lighting to suit your theme.',
+              title: 'Venue décor and themed setups',
+              text: 'Custom décor and themes to create the perfect ambiance.',
             },
             {
-              title: 'Ceremony Coordination',
-              text: 'Flawless execution of all rituals – mehndi, haldi, pheras – with cultural authenticity.',
+              title: 'Entertainment and artist management',
+              text: 'Booking and managing artists and entertainment for your event.',
+            },
+            {
+              title: 'Guest hospitality and travel coordination',
+              text: 'Ensuring your guests have a seamless and enjoyable experience.',
+            },
+            {
+              title: 'Photography and videography services',
+              text: 'Capturing every moment with professional photography and videography.',
+            },
+            {
+              title: 'Catering and menu planning',
+              text: 'Delicious and customized menus to delight your guests.',
             },
           ].map((item, i) => (
             <motion.div
@@ -82,29 +97,13 @@ const Weddings = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.2 }}
               viewport={{ once: true }}
-              className="p-8 rounded-3xl shadow-xl border border-yellow-500 bg-gradient-to-br from-[#fef6da] via-[#fff8e1] to-[#fbeec1] hover:shadow-yellow-300/50 hover:-translate-y-2 transition-all duration-300"
+              className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300"
             >
-              <h3 className="text-2xl font-extrabold mb-4 text-[#222]">{item.title}</h3>
+              <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">{item.title}</h3>
               <p className="text-gray-700 text-base leading-relaxed">{item.text}</p>
             </motion.div>
           ))}
         </div>
-
-        {/* "And more..." */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <p className="text-lg md:text-xl font-medium text-gray-700">
-            ...and much more to make your dream wedding a reality.
-          </p>
-          <p className="mt-2 text-sm text-yellow-700 italic">
-            From sangeet to baraat, every detail — flawlessly curated.
-          </p>
-        </motion.div>
       </section>
 
       {/* Featured Weddings */}

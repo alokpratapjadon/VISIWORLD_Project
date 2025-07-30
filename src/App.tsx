@@ -15,6 +15,7 @@ const DestinationManagement = lazy(() => import('./components/DestinationManagem
 const Weddings = lazy(() => import('./components/Weddings'));
 const MiceTravel = lazy(() => import('./components/MiceTravel'));
 const TravelServices = lazy(() => import('./components/TravelServices'));
+const Exhibitions = lazy(() => import('./components/Exhibitions')); // Added Exhibitions lazy import
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
               <Route path="concerts" element={<Concerts />} />
               <Route path="destination-management" element={<DestinationManagement />} />
               <Route path="weddings" element={<Weddings />} />
+              <Route path="exhibitions" element={<Exhibitions />} /> {/* Added Exhibitions route */}
               <Route path="mice-travel" element={<MiceTravel />} />
               <Route path="travel-services" element={<TravelServices />} />
             </Route>

@@ -9,13 +9,16 @@ import corporateVideo from '../Assets/corporate.mp4';
 const CorporateEvents = () => {
   // ✅ Only 3 items now
   const images = [
-    { src: corporate1, title: 'Leadership Summit', desc: 'Bangalore, 2024' },
-    { src: corporate2, title: 'Product Launch Gala', desc: 'Mumbai, 2023' },
-    { src: corporate3, title: 'Annual Employee Meet', desc: 'Hyderabad, 2023' }
+    { src: corporate1, title: 'Annual Sales Meet', desc: '500+ Guests' },
+    { src: corporate2, title: 'Smartphone Launch', desc: 'Immersive Stage Setup' },
+    { src: corporate3, title: 'Corporate Gala Night', desc: 'Luxury Branding' }
   ];
 
   return (
-    <div className="bg-[#fcf9ed] text-[#333] font-poppins relative">
+<div className="bg-white text-[#333] font-poppins relative overflow-hidden">
+      {/* Background animation */}
+      <div className="absolute inset-0 bg-gradient-to-r from-yellow-200 via-yellow-100 to-yellow-200 animate-gradient-x opacity-20 pointer-events-none"></div>
+
       {/* Logo */}
       <div className="absolute top-6 left-6 z-30">
         <Link to="/">
@@ -58,27 +61,45 @@ const CorporateEvents = () => {
       </section>
 
       {/* What We Offer Section */}
-      <section className="py-20 px-6 md:px-20 bg-[#fffaf0]">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-14 bg-gradient-to-r from-yellow-500 to-yellow-300 text-transparent bg-clip-text">
+      <section className="py-20 px-6 md:px-20 bg-white relative z-10">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-14 text-yellow-600 font-poppins">
           What We Offer
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <div className="rounded-3xl bg-gradient-to-br from-[#fef6da] via-[#fff8e1] to-[#fbeec1] border border-yellow-500 p-8 shadow-xl hover:shadow-yellow-300/50 hover:-translate-y-1 transition duration-300 transform">
-            <h3 className="text-2xl font-bold mb-3 text-[#222]">Corporate Summits</h3>
+          <div className="rounded-3xl bg-white border border-yellow-400 p-8 shadow-lg hover:shadow-yellow-400 hover:-translate-y-1 transition duration-300 transform">
+            <h3 className="text-2xl font-bold mb-3 text-yellow-700">Conferences & Seminars</h3>
             <p className="text-gray-700 text-base leading-relaxed">
-              Meticulously planned large-scale conferences and board-level events with end-to-end solutions.
+              Planning and managing conferences, seminars, product launches, corporate parties and celebrations for businesses.
             </p>
           </div>
-          <div className="rounded-3xl bg-gradient-to-br from-[#fef6da] via-[#fff8e1] to-[#fbeec1] border border-yellow-500 p-8 shadow-xl hover:shadow-yellow-300/50 hover:-translate-y-1 transition duration-300 transform">
-            <h3 className="text-2xl font-bold mb-3 text-[#222]">Product Launches</h3>
+          <div className="rounded-3xl bg-white border border-yellow-400 p-8 shadow-lg hover:shadow-yellow-400 hover:-translate-y-1 transition duration-300 transform">
+            <h3 className="text-2xl font-bold mb-3 text-yellow-700">Dealer & Distributor Meets</h3>
+            <p className="text-gray-700 text-base leading-relaxed">
+              Organizing meetings and events to strengthen dealer and distributor relationships.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white border border-yellow-400 p-8 shadow-lg hover:shadow-yellow-400 hover:-translate-y-1 transition duration-300 transform">
+            <h3 className="text-2xl font-bold mb-3 text-yellow-700">Annual Day Celebrations</h3>
+            <p className="text-gray-700 text-base leading-relaxed">
+              Planning and executing memorable annual day celebrations for companies.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white border border-yellow-400 p-8 shadow-lg hover:shadow-yellow-400 hover:-translate-y-1 transition duration-300 transform">
+            <h3 className="text-2xl font-bold mb-3 text-yellow-700">Team-Building Activities</h3>
+            <p className="text-gray-700 text-base leading-relaxed">
+              Engaging team-building programs to enhance collaboration and morale.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white border border-yellow-400 p-8 shadow-lg hover:shadow-yellow-400 hover:-translate-y-1 transition duration-300 transform">
+            <h3 className="text-2xl font-bold mb-3 text-yellow-700">Award Nights & Corporate Parties</h3>
+            <p className="text-gray-700 text-base leading-relaxed">
+              Organizing award nights and corporate parties with style and elegance.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white border border-yellow-400 p-8 shadow-lg hover:shadow-yellow-400 hover:-translate-y-1 transition duration-300 transform">
+            <h3 className="text-2xl font-bold mb-3 text-yellow-700">Product Launches</h3>
             <p className="text-gray-700 text-base leading-relaxed">
               Creative and technical execution of product unveilings tailored to impress clients and media.
-            </p>
-          </div>
-          <div className="rounded-3xl bg-gradient-to-br from-[#fef6da] via-[#fff8e1] to-[#fbeec1] border border-yellow-500 p-8 shadow-xl hover:shadow-yellow-300/50 hover:-translate-y-1 transition duration-300 transform">
-            <h3 className="text-2xl font-bold mb-3 text-[#222]">Annual Meets</h3>
-            <p className="text-gray-700 text-base leading-relaxed">
-              Comprehensive planning of annual company-wide functions including awards, entertainment, and catering.
             </p>
           </div>
         </div>

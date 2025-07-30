@@ -4,17 +4,20 @@ import logo from '../Assets/IMG_9055.png';
 import wedding1 from '../Assets/Destination2.jpg';
 import wedding2 from '../Assets/Destination3.jpg';
 import wedding3 from '../Assets/Destination1.jpg';
-import destinationVideo from '../Assets/Destination1Video.mp4'; // ✅ Import video here
+import destinationVideo from '../Assets/Destination1Video.mp4';
 
 const DestinationManagement = () => {
   const images = [
-    { src: wedding1, title: 'Exotic Destinations', desc: 'Tailored corporate retreats and incentive travel' },
-    { src: wedding2, title: 'Luxury Experiences', desc: 'Exclusive access and curated itineraries' },
-    { src: wedding3, title: 'Seamless Planning', desc: 'End-to-end management for flawless execution' },
+    { src: wedding1, title: 'Corporate incentive trip for 100+ employees', desc: '' },
+    { src: wedding2, title: 'Destination wedding in Jaipur with full guest management', desc: '' },
+    { src: wedding3, title: 'Weekend retreat for a company’s leadership team', desc: '' },
   ];
 
   return (
-    <div className="bg-[#fcf9ed] text-[#333] font-poppins relative">
+    <div className="bg-white text-[#333] font-poppins relative overflow-hidden">
+      {/* Background animation */}
+      <div className="absolute inset-0 bg-gradient-to-r from-yellow-200 via-yellow-100 to-yellow-200 animate-gradient-x opacity-20 pointer-events-none"></div>
+
       {/* Logo */}
       <div className="absolute top-6 left-6 z-30">
         <Link to="/">
@@ -31,7 +34,7 @@ const DestinationManagement = () => {
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
         >
-          <source src={destinationVideo} type="video/mp4" /> {/* ✅ Fixed path */}
+          <source src={destinationVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black/40 z-10" />
@@ -42,7 +45,7 @@ const DestinationManagement = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            DESTINATION MANAGEMENT
+            DESTINATION EVENTS & GROUP TOURS
           </motion.h1>
           <motion.p
             className="text-white text-lg md:text-xl max-w-2xl font-medium"
@@ -50,29 +53,41 @@ const DestinationManagement = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Curated destination experiences and incentive travel programs for corporate rewards.
+            Handling destination weddings, corporate retreats, incentive trips, and group travel packages.
           </motion.p>
         </div>
       </section>
 
       {/* What We Offer Section */}
-      <section className="py-20 px-6 md:px-20 bg-[#fffaf0]">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 bg-gradient-to-r from-yellow-500 to-yellow-300 text-transparent bg-clip-text">
+      <section className="py-20 px-6 md:px-20 bg-white relative z-10">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-yellow-600 font-poppins">
           What We Offer
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {[
             {
-              title: 'Tailored Itineraries',
-              text: 'Custom travel plans designed to meet your corporate goals and preferences.',
+              title: 'Complete travel and stay arrangements',
+              text: 'Organizing all travel and accommodation logistics for groups.',
             },
             {
-              title: 'Exclusive Partnerships',
-              text: 'Access to premium hotels, resorts, and local experiences worldwide.',
+              title: 'Destination wedding coordination',
+              text: 'Full coordination of destination weddings including guest management.',
             },
             {
-              title: 'On-ground Support',
-              text: 'Dedicated teams ensuring smooth logistics and exceptional service.',
+              title: 'Corporate retreats and team-building programs',
+              text: 'Planning retreats and team-building activities for corporate clients.',
+            },
+            {
+              title: 'Guided group tours and activities',
+              text: 'Organizing guided tours and group activities tailored to client needs.',
+            },
+            {
+              title: 'On-site logistics and ground support',
+              text: 'Providing on-site management and support during events and tours.',
+            },
+            {
+              title: 'Customized itineraries for groups',
+              text: 'Creating personalized travel itineraries for groups of all sizes.',
             },
           ].map((item, i) => (
             <motion.div
@@ -81,28 +96,13 @@ const DestinationManagement = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.2 }}
               viewport={{ once: true }}
-              className="p-8 rounded-3xl shadow-xl border border-yellow-500 bg-gradient-to-br from-[#fef6da] via-[#fff8e1] to-[#fbeec1] hover:shadow-yellow-300/50 hover:-translate-y-2 transition-all duration-300"
+              className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300"
             >
-              <h3 className="text-2xl font-extrabold mb-4 text-[#222]">{item.title}</h3>
+              <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">{item.title}</h3>
               <p className="text-gray-700 text-base leading-relaxed">{item.text}</p>
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <p className="text-lg md:text-xl font-medium text-gray-700">
-            ...and much more to create unforgettable corporate travel experiences.
-          </p>
-          <p className="mt-2 text-sm text-yellow-700 italic">
-            From planning to execution, every detail handled with care.
-          </p>
-        </motion.div>
       </section>
 
       {/* Featured Destinations */}

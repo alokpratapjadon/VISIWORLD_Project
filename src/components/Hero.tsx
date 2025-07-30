@@ -1,6 +1,6 @@
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import heroVideo from '../Assets/EventVideo.mp4';
+import heroVideo from '../Assets/MICE.mp4';
 import oldLogo from '../Assets/IMG_9055.png';
 import newLogo from '../Assets/centerheronav.png';
 import MobileMenu from './MobileMenu';

@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import logo from '../Assets/IMG_9055.png';
-import wedding1 from '../Assets/wedding1.jpg';
-import wedding2 from '../Assets/wedding2.jpg';
-import wedding3 from '../Assets/wedding3.jpg';
-import travelServicesVideo from '../Assets/hotel&travel.mp4';
+import exhibition1 from '../Assets/event.webp'; // Placeholder image for exhibitions
+import exhibition2 from '../Assets/event.webp';
+import exhibition3 from '../Assets/event.webp';
+import exhibitionVideo from '../Assets/EventVideo.mp4'; // Assuming an event video asset
 
-const TravelServices = () => {
+const Exhibitions = () => {
   const images = [
-    { src: wedding1, title: 'Accommodations', desc: 'Premium hotel bookings and stays' },
-    { src: wedding2, title: 'Ticketing', desc: 'Efficient flight and transport arrangements' },
-    { src: wedding3, title: 'Visa Assistance', desc: 'Smooth processing for international travel' },
+    { src: exhibition1, title: 'Trade fair booth for a leading electronics company', desc: '' },
+    { src: exhibition2, title: 'Complete pavilion design for a real estate brand', desc: '' },
+    { src: exhibition3, title: 'Customized exhibition stall for a food and beverage company', desc: '' },
   ];
 
   return (
@@ -32,13 +32,12 @@ const TravelServices = () => {
           loop
           muted
           playsInline
-          preload="auto"
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
-          src={travelServicesVideo}
+          src={exhibitionVideo}
         >
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 bg-black/40 z-10" /> {/* darker overlay */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="relative z-20 h-full flex flex-col justify-center items-center text-center px-6">
           <motion.h1
             className="text-5xl md:text-6xl font-extrabold tracking-wide mb-6 bg-gradient-to-r from-yellow-400 to-yellow-200 text-transparent bg-clip-text"
@@ -46,7 +45,7 @@ const TravelServices = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            HOTEL & TRAVEL SERVICES
+            EXHIBITIONS
           </motion.h1>
           <motion.p
             className="text-white text-lg md:text-xl max-w-2xl font-medium"
@@ -54,7 +53,7 @@ const TravelServices = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Complete travel support including accommodations, ticketing, and visa assistance.
+            End-to-end setup and management of trade fairs, stalls, booths, and expo participation for brands.
           </motion.p>
         </div>
       </section>
@@ -67,16 +66,28 @@ const TravelServices = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {[
             {
-              title: 'Hotel Bookings',
-              text: 'Wide range of hotels to suit all budgets and preferences.',
+              title: 'Exhibition stall and booth design',
+              text: 'Creative and functional designs tailored to your brand and event goals.',
             },
             {
-              title: 'Flight & Transport',
-              text: 'Efficient and timely travel arrangements for all needs.',
+              title: 'Stall fabrication and installation',
+              text: 'Professional fabrication and timely installation of exhibition stalls.',
             },
             {
-              title: 'Visa Processing',
-              text: 'Expert assistance to ensure hassle-free visa approvals.',
+              title: 'Brand activation and live demos',
+              text: 'Engaging brand activations and live demonstrations to attract visitors.',
+            },
+            {
+              title: 'On-site staffing and management',
+              text: 'Experienced staff to manage your booth and engage with attendees.',
+            },
+            {
+              title: 'Logistics, permissions, and security',
+              text: 'Handling all logistics, permits, and security requirements seamlessly.',
+            },
+            {
+              title: 'Interactive displays and tech integrations',
+              text: 'Incorporating technology and interactive elements to enhance visitor experience.',
             },
           ].map((item, i) => (
             <motion.div
@@ -92,29 +103,13 @@ const TravelServices = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* "And more..." */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <p className="text-lg md:text-xl font-medium text-gray-700">
-            ...and much more to make your travel experience smooth and enjoyable.
-          </p>
-          <p className="mt-2 text-sm text-yellow-700 italic">
-            From bookings to travel support, we handle every detail.
-          </p>
-        </motion.div>
       </section>
 
-      {/* Featured Services */}
+      {/* Featured Work */}
       <section className="py-20 px-6 md:px-20 bg-[#fdf6e3]">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 bg-gradient-to-r from-yellow-500 to-yellow-300 text-transparent bg-clip-text">
-            Featured Services
+            Featured Work
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -144,4 +139,4 @@ const TravelServices = () => {
   );
 };
 
-export default TravelServices;
+export default Exhibitions;

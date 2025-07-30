@@ -1,20 +1,23 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import logo from '../Assets/IMG_9055.png';
-import wedding1 from '../Assets/consert1.jpg';
-import wedding2 from '../Assets/consert2.jpg';
-import wedding3 from '../Assets/consert3.jpg';
+import concert1 from '../Assets/consert1.jpg';
+import concert2 from '../Assets/consert2.jpg';
+import concert3 from '../Assets/consert3.jpg';
 import concertVideo from '../Assets/consert.mp4';
 
 const Concerts = () => {
   const images = [
-    { src: wedding1, title: 'Music Festivals', desc: 'Large-scale outdoor events with top artists' },
-    { src: wedding2, title: 'Live Concerts', desc: 'Intimate venues with world-class sound and lighting' },
-    { src: wedding3, title: 'Corporate Entertainment', desc: 'Exclusive performances for corporate clients' },
+    { src: concert1, title: 'International DJ night for a music festival', desc: '' },
+    { src: concert2, title: 'Bollywood celebrity concert for a city event', desc: '' },
+    { src: concert3, title: 'Cultural festival with multiple stage performances', desc: '' },
   ];
 
   return (
-    <div className="bg-[#fcf9ed] text-[#333] font-poppins relative">
+<div className="bg-white text-[#333] font-poppins relative overflow-hidden">
+      {/* Background animation */}
+      <div className="absolute inset-0 bg-gradient-to-r from-yellow-200 via-yellow-100 to-yellow-200 animate-gradient-x opacity-20 pointer-events-none"></div>
+
       {/* Logo */}
       <div className="absolute top-6 left-6 z-30">
         <Link to="/">
@@ -43,7 +46,7 @@ const Concerts = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            CONCERTS & EVENTS
+            CONCERTS & ENTERTAINMENT SHOWS
           </motion.h1>
           <motion.p
             className="text-white text-lg md:text-xl max-w-2xl font-medium"
@@ -51,29 +54,41 @@ const Concerts = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Large-scale concert production and music event management with world-class production values.
+            Organizing live concerts, celebrity performances, music festivals, and cultural events.
           </motion.p>
         </div>
       </section>
 
       {/* What We Offer Section */}
-      <section className="py-20 px-6 md:px-20 bg-[#fffaf0]">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 bg-gradient-to-r from-yellow-500 to-yellow-300 text-transparent bg-clip-text">
+      <section className="py-20 px-6 md:px-20 bg-white relative z-10">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-yellow-600 font-poppins">
           What We Offer
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {[
             {
-              title: 'Festival Planning',
-              text: 'Comprehensive logistics and artist management for large festivals.',
+              title: 'Stage design and event production',
+              text: 'Creating immersive stages and managing event production from start to finish.',
             },
             {
-              title: 'Sound & Lighting',
-              text: 'State-of-the-art equipment and expert technicians for flawless shows.',
+              title: 'Celebrity and artist bookings',
+              text: 'Booking top artists and celebrities to elevate your event.',
             },
             {
-              title: 'Event Promotion',
-              text: 'Marketing and PR strategies to maximize audience engagement.',
+              title: 'Light, sound, and special effects setup',
+              text: 'Professional setup of lighting, sound, and special effects for a memorable experience.',
+            },
+            {
+              title: 'Crowd management and security',
+              text: 'Ensuring safety and smooth crowd control during events.',
+            },
+            {
+              title: 'Ticketing and promotions',
+              text: 'Managing ticket sales and promotional activities to maximize attendance.',
+            },
+            {
+              title: 'On-ground execution and event staffing',
+              text: 'Providing skilled staff for flawless event execution.',
             },
           ].map((item, i) => (
             <motion.div
@@ -82,29 +97,13 @@ const Concerts = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.2 }}
               viewport={{ once: true }}
-              className="p-8 rounded-3xl shadow-xl border border-yellow-500 bg-gradient-to-br from-[#fef6da] via-[#fff8e1] to-[#fbeec1] hover:shadow-yellow-300/50 hover:-translate-y-2 transition-all duration-300"
+              className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300"
             >
-              <h3 className="text-2xl font-extrabold mb-4 text-[#222]">{item.title}</h3>
+              <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">{item.title}</h3>
               <p className="text-gray-700 text-base leading-relaxed">{item.text}</p>
             </motion.div>
           ))}
         </div>
-
-        {/* "And more..." */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <p className="text-lg md:text-xl font-medium text-gray-700">
-            ...and much more to create unforgettable music events.
-          </p>
-          <p className="mt-2 text-sm text-yellow-700 italic">
-            From intimate gigs to massive festivals, every detail perfected.
-          </p>
-        </motion.div>
       </section>
 
       {/* Featured Concerts */}

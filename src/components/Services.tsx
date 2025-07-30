@@ -13,57 +13,61 @@ import DestinationImg from '../Assets/Destination1.jpg';
 import WeddingImg from '../Assets/IMG_9061.jpg';
 import CorporateTravelImg from '../Assets/corporate travel.jpg';
 import HotelTravelImg from '../Assets/IMG_9059.jpg';
+import ExhibitionImg from '../Assets/event.webp'; // Assuming this image for Exhibitions
 
 const Services = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const services = [
     {
-      title: "Corporate & Social Events",
-      description: "Professional corporate events and social gatherings tailored to your brand and objectives.",
+      title: "Corporate Events",
+      description: "Planning and managing conferences, seminars, product launches, corporate parties and celebrations for businesses.",
       image: CorporateEventImg,
       slug: "corporate-events"
     },
     {
-      title: "Concerts",
-      description: "Large-scale concert production and music event management with world-class production values.",
-      image: ConcertImg,
-      slug: "concerts"
+      title: "Exhibitions",
+      description: "End-to-end setup and management of trade fairs, stalls, booths, and expo participation for brands.",
+      image: ExhibitionImg,
+      slug: "exhibitions"
     },
     {
-      title: "Destination Management",
-      description: "Curated destination experiences and incentive travel programs for corporate rewards.",
-      image: DestinationImg,
-      slug: "destination-management"
-    },
-    {
-      title: "Weddings",
-      description: "Dream wedding planning and execution, creating magical moments for your special day.",
+      title: "Weddings & Private Celebrations",
+      description: "Complete arrangements for weddings, anniversaries, birthdays, and other family events, including décor and entertainment.",
       image: WeddingImg,
       slug: "weddings"
     },
     {
-      title: "MICE / Corporate Travel",
-      description: "Meetings, Incentives, Conferences, and Events with seamless corporate travel solutions.",
-      image: CorporateTravelImg,
-      slug: "mice-travel"
+      title: "Concerts & Entertainment Shows",
+      description: "Organizing live concerts, celebrity performances, music festivals, and cultural events.",
+      image: ConcertImg,
+      slug: "concerts"
     },
     {
-      title: "Hotel & Travel Services",
-      description: "Complete travel support including accommodations, ticketing, and visa assistance.",
+      title: "Destination Events & Group Tours",
+      description: "Handling destination weddings, corporate retreats, incentive trips, and group travel packages.",
+      image: DestinationImg,
+      slug: "destination-management"
+    },
+    {
+      title: "Travel & Hospitality Services",
+      description: "Assistance with hotel bookings, flights, visa, and local transport for individuals and event groups.",
       image: HotelTravelImg,
       slug: "travel-services"
     }
   ];
 
   return (
-    <section id="services" className="py-12 md:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-12 md:py-20 bg-white relative overflow-hidden">
+      {/* Background animation */}
+      <div className="absolute inset-0 bg-gradient-to-r from-yellow-200 via-yellow-100 to-yellow-200 animate-gradient-x opacity-20 pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12 md:mb-16">
           <p className="text-luxury-gold font-semibold text-2xl md:text-2xl uppercase tracking-wide mb-4 font-poppins">
-  OUR SERVICES
-</p>
-          <h2 className="text-3xl md:text-6xl lg:text-6xl font-light text-gray-1000 mb-8 md:mb-12 font-poppins">
+            OUR SERVICES
+          </p>
+          <h2 className="text-3xl md:text-6xl lg:text-6xl font-light text-gray-900 mb-8 md:mb-12 font-poppins">
             Precision and Passion
           </h2>
         </div>
@@ -71,16 +75,16 @@ const Services = () => {
         <div className="relative">
           {/* Custom SVG Navigation Buttons */}
           <div className="absolute z-10 -left-6 top-1/2 -translate-y-1/2 hidden md:flex">
-            <div className="swiper-button-prev-custom backdrop-blur-md bg-white/60 p-2 rounded-full shadow hover:scale-110 transition-all cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 stroke-black" fill="none" viewBox="0 0 24 24" strokeWidth="2">
+            <div className="swiper-button-prev-custom backdrop-blur-md bg-white/60 p-2 rounded-full shadow hover:shadow-yellow-400 hover:scale-110 transition-all cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 stroke-yellow-600" fill="none" viewBox="0 0 24 24" strokeWidth="2">
                 <path d="m15 18-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
           </div>
 
           <div className="absolute z-10 -right-6 top-1/2 -translate-y-1/2 hidden md:flex">
-            <div className="swiper-button-next-custom backdrop-blur-md bg-white/60 p-2 rounded-full shadow hover:scale-110 transition-all cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 stroke-black" fill="none" viewBox="0 0 24 24" strokeWidth="2">
+            <div className="swiper-button-next-custom backdrop-blur-md bg-white/60 p-2 rounded-full shadow hover:shadow-yellow-400 hover:scale-110 transition-all cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 stroke-yellow-600" fill="none" viewBox="0 0 24 24" strokeWidth="2">
                 <path d="m9 18 6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
@@ -107,7 +111,7 @@ const Services = () => {
               <SwiperSlide key={index}>
                 <Link
                   to={`/services/${service.slug}`}
-                  className="group block bg-white shadow-md hover:shadow-lg transition-all duration-500 overflow-hidden rounded-lg"
+                  className="group block bg-white shadow-lg hover:shadow-yellow-400 transition-all duration-500 overflow-hidden rounded-lg border border-yellow-300"
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
@@ -118,23 +122,23 @@ const Services = () => {
                     >
                       <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
                     </div>
-                    <div className={`absolute inset-0 bg-gradient-to-t from-luxury-gold/10 to-transparent transition-opacity duration-500 ${
+                    <div className={`absolute inset-0 bg-gradient-to-t from-luxury-gold/20 to-transparent transition-opacity duration-500 ${
                       hoveredIndex === index ? 'opacity-100' : 'opacity-0'
                     }`}></div>
                   </div>
 
                   <div className="p-5 md:p-6 bg-white relative rounded-b-lg">
-                    <h3 className="text-lg md:text-xl font-light text-gray-900 mb-3 font-prata">
+                    <h3 className="text-lg md:text-xl font-light text-yellow-700 mb-3 font-prata">
                       {service.title}
                     </h3>
-                    <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-4 font-prata">
+                    <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-4 font-prata">
                       {service.description}
                     </p>
-                    <div className={`absolute bottom-0 left-0 right-0 bg-luxury-gold/10 backdrop-blur-sm p-3 flex items-center justify-between transition-all duration-500 ${
+                    <div className={`absolute bottom-0 left-0 right-0 bg-yellow-100 backdrop-blur-sm p-3 flex items-center justify-between transition-all duration-500 ${
                       hoveredIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-full'
                     } rounded-b-lg`}>
-                      <span className="text-luxury-gold font-semibold font-prata text-sm">View Details</span>
-                      <ArrowRight className="w-4 h-4 text-luxury-gold transform group-hover:translate-x-1 transition-transform duration-300 bg-white p-1 rounded-full" />
+                      <span className="text-yellow-700 font-semibold font-prata text-sm">View Details</span>
+                      <ArrowRight className="w-4 h-4 text-yellow-700 transform group-hover:translate-x-1 transition-transform duration-300 bg-white p-1 rounded-full" />
                     </div>
                   </div>
                 </Link>
@@ -148,3 +152,17 @@ const Services = () => {
 };
 
 export default Services;
+
+/* Additional CSS for animation (to be added in tailwind.config.js or global CSS)
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+.animate-gradient-x {
+  animation: gradient-x 15s ease infinite;
+}
+*/
