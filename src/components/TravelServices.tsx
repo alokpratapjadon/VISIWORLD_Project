@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import logo from '../Assets/IMG_9055.png';
 import wedding1 from '../Assets/wedding1.jpg';
-import wedding2 from '../Assets/wedding2.jpg';
-import wedding3 from '../Assets/wedding3.jpg';
+import wedding2 from '../Assets/trip.jpg';
+import wedding3 from '../Assets/trip.jpg';
 import travelServicesVideo from '../Assets/hotel&travel.mp4';
 
 const TravelServices = () => {
@@ -65,32 +65,30 @@ const TravelServices = () => {
           What We Offer
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {[
-            {
-              title: 'Hotel Bookings',
-              text: 'Wide range of hotels to suit all budgets and preferences.',
-            },
-            {
-              title: 'Flight & Transport',
-              text: 'Efficient and timely travel arrangements for all needs.',
-            },
-            {
-              title: 'Visa Processing',
-              text: 'Expert assistance to ensure hassle-free visa approvals.',
-            },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.2 }}
-              viewport={{ once: true }}
-              className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300"
-            >
-              <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">{item.title}</h3>
-              <p className="text-gray-700 text-base leading-relaxed">{item.text}</p>
-            </motion.div>
-          ))}
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Hotel and resort bookings at best rates</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Hotel and resort bookings at best rates</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Flight ticketing and scheduling</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Flight ticketing and scheduling</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Visa assistance and travel documentation</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Visa assistance and travel documentation</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Local transportation and chauffeur services</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Local transportation and chauffeur services</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Group travel coordination for events</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Group travel coordination for events</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">24/7 travel support for clients</h3>
+            <p className="text-gray-700 text-base leading-relaxed">24/7 travel support for clients</p>
+          </div>
         </div>
 
         {/* "And more..." */}

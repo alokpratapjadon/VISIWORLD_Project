@@ -1,6 +1,6 @@
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import heroVideo from '../Assets/MICE.mp4';
+import heroVideo from '../Assets/hero section video.mp4';
 import oldLogo from '../Assets/IMG_9055.png';
 import newLogo from '../Assets/centerheronav.png';
 import MobileMenu from './MobileMenu';
@@ -21,7 +21,8 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden">
-      {/* Background Video */}
+      {/* Background Video removed */}
+
       <video
         autoPlay
         muted

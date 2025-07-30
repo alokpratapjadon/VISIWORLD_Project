@@ -65,44 +65,30 @@ const Concerts = () => {
           What We Offer
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {[
-            {
-              title: 'Stage design and event production',
-              text: 'Creating immersive stages and managing event production from start to finish.',
-            },
-            {
-              title: 'Celebrity and artist bookings',
-              text: 'Booking top artists and celebrities to elevate your event.',
-            },
-            {
-              title: 'Light, sound, and special effects setup',
-              text: 'Professional setup of lighting, sound, and special effects for a memorable experience.',
-            },
-            {
-              title: 'Crowd management and security',
-              text: 'Ensuring safety and smooth crowd control during events.',
-            },
-            {
-              title: 'Ticketing and promotions',
-              text: 'Managing ticket sales and promotional activities to maximize attendance.',
-            },
-            {
-              title: 'On-ground execution and event staffing',
-              text: 'Providing skilled staff for flawless event execution.',
-            },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.2 }}
-              viewport={{ once: true }}
-              className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300"
-            >
-              <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">{item.title}</h3>
-              <p className="text-gray-700 text-base leading-relaxed">{item.text}</p>
-            </motion.div>
-          ))}
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Stage design and event production</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Stage design and event production</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Celebrity and artist bookings</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Celebrity and artist bookings</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Light, sound, and special effects setup</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Light, sound, and special effects setup</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Crowd management and security</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Crowd management and security</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Ticketing and promotions</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Ticketing and promotions</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">On-ground execution and event staffing</h3>
+            <p className="text-gray-700 text-base leading-relaxed">On-ground execution and event staffing</p>
+          </div>
         </div>
       </section>
 

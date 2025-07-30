@@ -64,44 +64,30 @@ const Exhibitions = () => {
           What We Offer
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {[
-            {
-              title: 'Exhibition stall and booth design',
-              text: 'Creative and functional designs tailored to your brand and event goals.',
-            },
-            {
-              title: 'Stall fabrication and installation',
-              text: 'Professional fabrication and timely installation of exhibition stalls.',
-            },
-            {
-              title: 'Brand activation and live demos',
-              text: 'Engaging brand activations and live demonstrations to attract visitors.',
-            },
-            {
-              title: 'On-site staffing and management',
-              text: 'Experienced staff to manage your booth and engage with attendees.',
-            },
-            {
-              title: 'Logistics, permissions, and security',
-              text: 'Handling all logistics, permits, and security requirements seamlessly.',
-            },
-            {
-              title: 'Interactive displays and tech integrations',
-              text: 'Incorporating technology and interactive elements to enhance visitor experience.',
-            },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.2 }}
-              viewport={{ once: true }}
-              className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300"
-            >
-              <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">{item.title}</h3>
-              <p className="text-gray-700 text-base leading-relaxed">{item.text}</p>
-            </motion.div>
-          ))}
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Exhibition stall and booth design</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Exhibition stall and booth design</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Stall fabrication and installation</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Stall fabrication and installation</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Brand activation and live demos</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Brand activation and live demos</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">On-site staffing and management</h3>
+            <p className="text-gray-700 text-base leading-relaxed">On-site staffing and management</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Logistics, permissions, and security</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Logistics, permissions, and security</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Interactive displays and tech integrations</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Interactive displays and tech integrations</p>
+          </div>
         </div>
       </section>
 

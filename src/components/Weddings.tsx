@@ -65,44 +65,30 @@ const Weddings = () => {
           What We Offer
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {[
-            {
-              title: 'Full wedding planning (concept to execution)',
-              text: 'From initial concept to flawless execution, we handle every detail.',
-            },
-            {
-              title: 'Venue décor and themed setups',
-              text: 'Custom décor and themes to create the perfect ambiance.',
-            },
-            {
-              title: 'Entertainment and artist management',
-              text: 'Booking and managing artists and entertainment for your event.',
-            },
-            {
-              title: 'Guest hospitality and travel coordination',
-              text: 'Ensuring your guests have a seamless and enjoyable experience.',
-            },
-            {
-              title: 'Photography and videography services',
-              text: 'Capturing every moment with professional photography and videography.',
-            },
-            {
-              title: 'Catering and menu planning',
-              text: 'Delicious and customized menus to delight your guests.',
-            },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.2 }}
-              viewport={{ once: true }}
-              className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300"
-            >
-              <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">{item.title}</h3>
-              <p className="text-gray-700 text-base leading-relaxed">{item.text}</p>
-            </motion.div>
-          ))}
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Full wedding planning (concept to execution)</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Full wedding planning (concept to execution)</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Venue décor and themed setups</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Venue décor and themed setups</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Entertainment and artist management</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Entertainment and artist management</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Guest hospitality and travel coordination</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Guest hospitality and travel coordination</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Photography and videography services</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Photography and videography services</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Catering and menu planning</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Catering and menu planning</p>
+          </div>
         </div>
       </section>
 

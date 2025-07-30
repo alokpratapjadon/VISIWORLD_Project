@@ -7,10 +7,10 @@ const DesktopMenu = () => {
 
   const servicesDropdown = [
     { name: 'Corporate & Social Events', slug: 'corporate-events' },
+    { name: 'Exhibitions', slug: 'exhibitions' },
     { name: 'Concerts', slug: 'concerts' },
     { name: 'Destination Management', slug: 'destination-management' },
     { name: 'Weddings', slug: 'weddings' },
-    { name: 'MICE / Corporate Travel', slug: 'mice-travel' },
     { name: 'Hotel & Travel Services', slug: 'travel-services' },
   ];
 

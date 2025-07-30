@@ -12,10 +12,10 @@ const Footer = () => {
 
   const services = [
     { name: 'Corporate & Social Events', href: '/services/corporate-events' },
+    { name: 'Exhibitions', href: '/services/exhibitions' },
     { name: 'Concerts', href: '/services/concerts' },
     { name: 'Destination Management', href: '/services/destination-management' },
     { name: 'Weddings', href: '/services/weddings' },
-    { name: 'MICE / Corporate Travel', href: '/services/mice-travel' },
     { name: 'Hotel Booking & Visa Services', href: '/services/travel-services' }
   ];
 

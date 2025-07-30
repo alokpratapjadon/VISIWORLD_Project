@@ -67,7 +67,7 @@ const CorporateEvents = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="rounded-3xl bg-white border border-yellow-400 p-8 shadow-lg hover:shadow-yellow-400 hover:-translate-y-1 transition duration-300 transform">
-            <h3 className="text-2xl font-bold mb-3 text-yellow-700">Conferences & Seminars</h3>
+            <h3 className="text-2xl font-bold mb-3 text-yellow-700">Conferences & Seminars-</h3>
             <p className="text-gray-700 text-base leading-relaxed">
               Planning and managing conferences, seminars, product launches, corporate parties and celebrations for businesses.
             </p>

@@ -64,44 +64,30 @@ const DestinationManagement = () => {
           What We Offer
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {[
-            {
-              title: 'Complete travel and stay arrangements',
-              text: 'Organizing all travel and accommodation logistics for groups.',
-            },
-            {
-              title: 'Destination wedding coordination',
-              text: 'Full coordination of destination weddings including guest management.',
-            },
-            {
-              title: 'Corporate retreats and team-building programs',
-              text: 'Planning retreats and team-building activities for corporate clients.',
-            },
-            {
-              title: 'Guided group tours and activities',
-              text: 'Organizing guided tours and group activities tailored to client needs.',
-            },
-            {
-              title: 'On-site logistics and ground support',
-              text: 'Providing on-site management and support during events and tours.',
-            },
-            {
-              title: 'Customized itineraries for groups',
-              text: 'Creating personalized travel itineraries for groups of all sizes.',
-            },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.2 }}
-              viewport={{ once: true }}
-              className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300"
-            >
-              <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">{item.title}</h3>
-              <p className="text-gray-700 text-base leading-relaxed">{item.text}</p>
-            </motion.div>
-          ))}
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Complete travel and stay arrangements</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Complete travel and stay arrangements</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Destination wedding coordination</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Destination wedding coordination</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Corporate retreats and team-building programs</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Corporate retreats and team-building programs</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Guided group tours and activities</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Guided group tours and activities</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">On-site logistics and ground support</h3>
+            <p className="text-gray-700 text-base leading-relaxed">On-site logistics and ground support</p>
+          </div>
+          <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
+            <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Customized itineraries for groups</h3>
+            <p className="text-gray-700 text-base leading-relaxed">Customized itineraries for groups</p>
+          </div>
         </div>
       </section>
 
