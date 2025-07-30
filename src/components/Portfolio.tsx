@@ -18,6 +18,15 @@ const portfolioItems = [
   { image: InternationalConference, title: "International Trip" },
 ];
 
+// Define overlay colors for each card
+const overlayColors = [
+  { main: 'bg-green-600', secondary: 'bg-green-500' },
+  { main: 'bg-blue-600', secondary: 'bg-blue-500' },
+  { main: 'bg-red-600', secondary: 'bg-red-500' },
+  { main: 'bg-yellow-600', secondary: 'bg-yellow-500' },
+  { main: 'bg-purple-600', secondary: 'bg-purple-500' },
+];
+
 const Portfolio = () => {
   return (
     <section id="portfolio" className="py-12 md:py-20 bg-white relative">
@@ -84,11 +93,17 @@ const Portfolio = () => {
                     className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition duration-700 ease-in-out"
                   />
 
-                  {/* Animated Curved Color Overlay Top Left */}
-                  <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-red-500 z-10 rounded-br-[450px] -translate-x-full -translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-700 ease-in-out opacity-80" style={{clipPath: 'polygon(0 0, 100% 0, 0 100%)'}} />
-                  
-                  {/* Animated Curved Color Overlay Bottom Right */}
-                  <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-red-600 z-10 rounded-tl-[450px] translate-x-full translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-700 ease-in-out opacity-80" style={{clipPath: 'polygon(100% 100%, 100% 0, 0 100%)'}} />
+            {/* Sleek Bottom-Right Diagonal Overlay */}
+            <div
+              className={`absolute bottom-0 right-0 w-full h-full ${overlayColors[index % overlayColors.length].main} opacity-80 z-10 transform translate-x-full translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-700 ease-in-out`}
+              style={{ clipPath: 'polygon(100% 100%, 70% 100%, 100% 70%)' }}
+            />
+
+            {/* Optional Top-Left Sleek Overlay */}
+            <div
+              className={`absolute top-0 left-0 w-full h-full ${overlayColors[index % overlayColors.length].secondary} opacity-80 z-10 transform -translate-x-full -translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-700 ease-in-out`}
+              style={{ clipPath: 'polygon(0 0, 30% 0, 0 30%)' }}
+            />
 
                   {/* Title Text */}
                   <div className="absolute bottom-6 left-6 z-20 transition-transform duration-700 ease-in-out group-hover:-translate-y-4">
