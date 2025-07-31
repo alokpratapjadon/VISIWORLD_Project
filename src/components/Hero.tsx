@@ -1,6 +1,7 @@
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import heroVideo from '../Assets/hero section video.mp4';
+import mobileHeroVideo from '../Assets/Mobile visiworld.mp4';
 import oldLogo from '../Assets/IMG_9055.png';
 import newLogo from '../Assets/centerheronav.png';
 import MobileMenu from './MobileMenu';
@@ -29,7 +30,19 @@ const Hero = () => {
         loop
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover block md:hidden"
+      >
+        <source src={mobileHeroVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover hidden md:block"
       >
         <source src={heroVideo} type="video/mp4" />
         Your browser does not support the video tag.

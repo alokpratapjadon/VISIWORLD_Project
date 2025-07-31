@@ -10,10 +10,10 @@ import 'swiper/css/navigation';
 import CorporateEventImg from '../Assets/CorprateEvent.jpg';
 import ConcertImg from '../Assets/IMG_9058.jpg';
 import DestinationImg from '../Assets/Destination1.jpg';
-import WeddingImg from '../Assets/IMG_9061.jpg';
+import WeddingImg from '../Assets/wedding11.jpg';
 import CorporateTravelImg from '../Assets/corporate travel.jpg';
 import HotelTravelImg from '../Assets/IMG_9059.jpg';
-import ExhibitionImg from '../Assets/event.webp'; // Assuming this image for Exhibitions
+import ExhibitionImg from '../Assets/event.jpg'; // Assuming this image for Exhibitions
 
 const Services = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);

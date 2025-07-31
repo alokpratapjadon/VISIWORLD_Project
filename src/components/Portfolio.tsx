@@ -4,8 +4,8 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import WeddingEvent from "../Assets/wedding.jpg";
-import MusicFestival from "../Assets/music.jpg.webp";
+import WeddingEvent from "../Assets/Destination3.jpg";
+import MusicFestival from "../Assets/music festival.jpg";
 import ProductLaunch from "../Assets/event.webp";
 import IncentiveTour from "../Assets/insentive.jpg";
 import InternationalConference from "../Assets/tour.jpg";

@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import logo from '../Assets/IMG_9055.png';
-import wedding1 from '../Assets/wedding1.jpg';
-import wedding2 from '../Assets/trip.jpg';
-import wedding3 from '../Assets/trip.jpg';
+import wedding1 from '../Assets/hotel1.jpg';
+import wedding2 from '../Assets/hotel2.jpg';
+import wedding3 from '../Assets/hotel3.jpg';
 import travelServicesVideo from '../Assets/hotel&travel.mp4';
 
 const TravelServices = () => {
