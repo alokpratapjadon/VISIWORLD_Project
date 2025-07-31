@@ -64,30 +64,30 @@ const TravelServices = () => {
         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-yellow-600 font-poppins">
           What We Offer
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Hotel and resort bookings at best rates</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Hotel and resort bookings at best rates</p>
+            <p className="text-gray-700 text-base leading-relaxed">Securing premium accommodations with competitive pricing for your comfort.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Flight ticketing and scheduling</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Flight ticketing and scheduling</p>
+            <p className="text-gray-700 text-base leading-relaxed">Coordinated flight bookings and itinerary management for hassle-free travel.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Visa assistance and travel documentation</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Visa assistance and travel documentation</p>
+            <p className="text-gray-700 text-base leading-relaxed">Expert guidance and support for smooth visa processing and documentation.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Local transportation and chauffeur services</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Local transportation and chauffeur services</p>
+            <p className="text-gray-700 text-base leading-relaxed">Reliable and comfortable transport options to get you where you need to go.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Group travel coordination for events</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Group travel coordination for events</p>
+            <p className="text-gray-700 text-base leading-relaxed">Organized group travel plans ensuring smooth logistics and communication.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">24/7 travel support for clients</h3>
-            <p className="text-gray-700 text-base leading-relaxed">24/7 travel support for clients</p>
+            <p className="text-gray-700 text-base leading-relaxed">Around-the-clock assistance to address any travel needs or emergencies.</p>
           </div>
         </div>
 

@@ -63,30 +63,30 @@ const DestinationManagement = () => {
         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-yellow-600 font-poppins">
           What We Offer
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Complete travel and stay arrangements</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Complete travel and stay arrangements</p>
+            <p className="text-gray-700 text-base leading-relaxed">Comprehensive planning and booking of accommodations and transportation for seamless travel experiences.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Destination wedding coordination</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Destination wedding coordination</p>
+            <p className="text-gray-700 text-base leading-relaxed">Expert management of all aspects of destination weddings to ensure a flawless celebration.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Corporate retreats and team-building programs</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Corporate retreats and team-building programs</p>
+            <p className="text-gray-700 text-base leading-relaxed">Tailored retreats and activities designed to strengthen team dynamics and boost morale.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Guided group tours and activities</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Guided group tours and activities</p>
+            <p className="text-gray-700 text-base leading-relaxed">Curated tours and experiences led by knowledgeable guides to enrich group travel.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">On-site logistics and ground support</h3>
-            <p className="text-gray-700 text-base leading-relaxed">On-site logistics and ground support</p>
+            <p className="text-gray-700 text-base leading-relaxed">Efficient coordination of event logistics and support services on location.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Customized itineraries for groups</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Customized itineraries for groups</p>
+            <p className="text-gray-700 text-base leading-relaxed">Personalized travel plans designed to meet the unique needs of each group.</p>
           </div>
         </div>
       </section>

@@ -64,30 +64,30 @@ const Weddings = () => {
         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-yellow-600 font-poppins">
           What We Offer
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Full wedding planning (concept to execution)</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Full wedding planning (concept to execution)</p>
+            <p className="text-gray-700 text-base leading-relaxed">Comprehensive planning and coordination to bring your dream wedding to life.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Venue décor and themed setups</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Venue décor and themed setups</p>
+            <p className="text-gray-700 text-base leading-relaxed">Elegant and personalized décor to create the perfect ambiance for your celebration.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Entertainment and artist management</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Entertainment and artist management</p>
+            <p className="text-gray-700 text-base leading-relaxed">Booking and managing top entertainers to keep your guests engaged and entertained.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Guest hospitality and travel coordination</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Guest hospitality and travel coordination</p>
+            <p className="text-gray-700 text-base leading-relaxed">Seamless arrangements for guest accommodations and transportation.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Photography and videography services</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Photography and videography services</p>
+            <p className="text-gray-700 text-base leading-relaxed">Capturing every special moment with professional photo and video coverage.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Catering and menu planning</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Catering and menu planning</p>
+            <p className="text-gray-700 text-base leading-relaxed">Delicious and customized menus to delight your guests’ palates.</p>
           </div>
         </div>
       </section>

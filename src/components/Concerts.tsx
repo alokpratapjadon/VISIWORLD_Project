@@ -64,30 +64,30 @@ const Concerts = () => {
         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-yellow-600 font-poppins">
           What We Offer
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Stage design and event production</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Stage design and event production</p>
+            <p className="text-gray-700 text-base leading-relaxed">Innovative stage setups and seamless event production tailored to your show’s needs.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Celebrity and artist bookings</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Celebrity and artist bookings</p>
+            <p className="text-gray-700 text-base leading-relaxed">Access to top talent and smooth coordination for memorable performances.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Light, sound, and special effects setup</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Light, sound, and special effects setup</p>
+            <p className="text-gray-700 text-base leading-relaxed">Cutting-edge audiovisual technology to create immersive experiences.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Crowd management and security</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Crowd management and security</p>
+            <p className="text-gray-700 text-base leading-relaxed">Ensuring safety and smooth flow for all attendees throughout the event.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Ticketing and promotions</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Ticketing and promotions</p>
+            <p className="text-gray-700 text-base leading-relaxed">Efficient ticket sales and marketing strategies to maximize attendance.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">On-ground execution and event staffing</h3>
-            <p className="text-gray-700 text-base leading-relaxed">On-ground execution and event staffing</p>
+            <p className="text-gray-700 text-base leading-relaxed">Experienced staff ensuring flawless event delivery from start to finish.</p>
           </div>
         </div>
       </section>

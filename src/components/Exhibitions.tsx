@@ -63,30 +63,30 @@ const Exhibitions = () => {
         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-yellow-600 font-poppins">
           What We Offer
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Exhibition stall and booth design</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Exhibition stall and booth design</p>
+            <p className="text-gray-700 text-base leading-relaxed">Creative and customized designs tailored to your brand’s identity and event goals.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Stall fabrication and installation</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Stall fabrication and installation</p>
+            <p className="text-gray-700 text-base leading-relaxed">High-quality construction and timely setup ensuring a flawless event presence.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Brand activation and live demos</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Brand activation and live demos</p>
+            <p className="text-gray-700 text-base leading-relaxed">Engaging activations and demonstrations to captivate your target audience.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">On-site staffing and management</h3>
-            <p className="text-gray-700 text-base leading-relaxed">On-site staffing and management</p>
+            <p className="text-gray-700 text-base leading-relaxed">Professional staff to manage operations and ensure smooth event execution.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Logistics, permissions, and security</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Logistics, permissions, and security</p>
+            <p className="text-gray-700 text-base leading-relaxed">Comprehensive handling of permits, transportation, and safety protocols.</p>
           </div>
           <div className="p-8 rounded-3xl shadow-lg border border-yellow-400 hover:shadow-yellow-400 hover:-translate-y-2 transition-all duration-300">
             <h3 className="text-2xl font-extrabold mb-4 text-yellow-700">Interactive displays and tech integrations</h3>
-            <p className="text-gray-700 text-base leading-relaxed">Interactive displays and tech integrations</p>
+            <p className="text-gray-700 text-base leading-relaxed">Innovative technology solutions to enhance visitor engagement and experience.</p>
           </div>
         </div>
       </section>
