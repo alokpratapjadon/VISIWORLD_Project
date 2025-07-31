@@ -3,13 +3,21 @@ import { useLocation } from 'react-router-dom';
 import { ChevronUp } from 'lucide-react';
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const location = useLocation();
   const [isVisible, setIsVisible] = useState(false);
 
-  // Scroll to top when the route changes
+  // Scroll to top or to hash element when the route changes
   useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [pathname]);
+  }, [location]);
 
   // Show/hide the scroll-to-top button
   useEffect(() => {

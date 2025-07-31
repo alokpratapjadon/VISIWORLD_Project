@@ -1,13 +1,15 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, MessageCircle } from 'lucide-react';
 import LogoImage from '../Assets/IMG_9055.png';
 
 const Footer = () => {
   const quickLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', to: '/' },
+    { name: 'Services', to: '/services#services' },
+    { name: 'Portfolio', to: '/#portfolio' },
+    { name: 'About Us', to: '/#about' },
+    { name: 'Contact', to: '/#contact' }
   ];
 
   const services = [
@@ -95,9 +97,9 @@ const Footer = () => {
               <ul className="space-y-2">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <a href={link.href} className="text-xs text-gray-300 hover:text-luxury-gold transition-colors">
+                    <Link to={link.to} className="text-xs text-gray-300 hover:text-luxury-gold transition-colors">
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -154,9 +156,9 @@ const Footer = () => {
             <ul className="space-y-1">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-sm text-gray-300 hover:text-luxury-gold transition-colors font-poppins">
+                  <Link to={link.to} className="text-sm text-gray-300 hover:text-luxury-gold transition-colors font-poppins">
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

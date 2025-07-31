@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import logo from '../Assets/IMG_9055.png';
-import exhibition1 from '../Assets/event.webp'; // Placeholder image for exhibitions
+import exhibition1 from '../Assets/EXHIBITIONS1.jpg'; // Updated image 1
+import exhibition3 from '../Assets/EXHIBITIONS2.jpg'; // Updated image 2
 import exhibition2 from '../Assets/event.webp';
-import exhibition3 from '../Assets/event.webp';
 import exhibitionVideo from '../Assets/EventVideo.mp4'; // Assuming an event video asset
 
 const Exhibitions = () => {

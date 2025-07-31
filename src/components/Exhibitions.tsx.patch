@@ -1,0 +1,4 @@
+import exhibition2 from '../Assets/event.webp';
+=======
+import exhibition1 from '../Assets/EXHIBITIONS1.jpg'; // Updated image 1
+import exhibition2 from '../Assets/EXHIBITIONS2.jpg'; // Updated image 2
