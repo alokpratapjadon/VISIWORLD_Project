@@ -13,30 +13,10 @@ import miceTravelImage from '../Assets/wedding1.jpg'; // from MiceTravel images 
 const About = () => {
   const [currentContentIndex, setCurrentContentIndex] = useState(0);
   const [showArrows, setShowArrows] = useState(false);
+
+  // State for touch positions for swipe detection
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const [touchEndX, setTouchEndX] = useState<number | null>(null);
-  const minSwipeDistance = 50;
-
-  const onTouchStart = (e: React.TouchEvent) => {
-    setTouchEndX(null);
-    setTouchStartX(e.targetTouches[0].clientX);
-  };
-
-  const onTouchMove = (e: React.TouchEvent) => {
-    setTouchEndX(e.targetTouches[0].clientX);
-  };
-
-  const onTouchEnd = () => {
-    if (!touchStartX || !touchEndX) return;
-    const distance = touchStartX - touchEndX;
-    if (distance > minSwipeDistance) {
-      nextContent();
-    } else if (distance < -minSwipeDistance) {
-      prevContent();
-    }
-    setTouchStartX(null);
-    setTouchEndX(null);
-  };
 
   const contentSections = [
     {
@@ -80,8 +60,41 @@ const About = () => {
     handleInteraction();
   };
 
+  // Swipe handlers
+  const onTouchStart = (e: React.TouchEvent) => {
+    console.log('onTouchStart', e.targetTouches[0].clientX);
+    setTouchEndX(null); // Reset touch end
+    setTouchStartX(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    console.log('onTouchMove', e.targetTouches[0].clientX);
+    setTouchEndX(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    console.log('onTouchEnd', touchStartX, touchEndX);
+    if (!touchStartX || !touchEndX) return;
+    const distance = touchStartX - touchEndX;
+    const minSwipeDistance = 50; // Minimum distance for a swipe
+
+    if (distance > minSwipeDistance) {
+      // Swiped left
+      nextContent();
+    } else if (distance < -minSwipeDistance) {
+      // Swiped right
+      prevContent();
+    }
+  };
+
   return (
-    <section id="about" className="py-12 md:py-20 bg-white">
+    <section
+      id="about"
+      className="py-12 md:py-20 bg-white"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
           <p className="text-luxury-gold font-medium text-2xl md:text-2xl uppercase tracking-wide mb-4 font-poppins">ABOUT US</p>
@@ -95,13 +108,11 @@ const About = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-gray-100 shadow-lg transform rotate-2 z-0"></div>
             <div className="absolute inset-0 bg-gray-50 shadow-md transform -rotate-1 z-10"></div>
-          <div
-            className="relative bg-white shadow-xl p-6 md:p-8 z-20 cursor-pointer"
-            onClick={handleInteraction}
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
-          >
+            <div
+              className="relative bg-white shadow-xl p-6 md:p-8 z-20 cursor-pointer"
+              onClick={handleInteraction}
+              onTouchStart={handleInteraction}
+            >
               <h3 className="text-2xl md:text-3xl font-light text-gray-900 mb-4 md:mb-6 font-poppins">
                 {contentSections[currentContentIndex].title}
               </h3>
