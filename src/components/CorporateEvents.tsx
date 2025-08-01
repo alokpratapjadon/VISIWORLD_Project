@@ -4,7 +4,7 @@ import logo from '../Assets/IMG_9055.png';
 import corporate1 from '../Assets/corporate1.jpg';
 import corporate2 from '../Assets/corporate2.jpg';
 import corporate3 from '../Assets/corporate3.jpg';
-import corporateVideo from '../Assets/corporate.mp4';
+import corporateVideo from '../Assets/Corporate and Social events services video.mp4';
 
 const CorporateEvents = () => {
   // ✅ Only 3 items now
@@ -47,7 +47,7 @@ const CorporateEvents = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            LET US MAKE YOUR LIVES EASIER
+            CORPORATE & SOCIAL EVENTS
           </motion.h1>
           <motion.p
             className="text-gray-200 text-lg md:text-xl max-w-2xl font-medium"

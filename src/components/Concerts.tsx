@@ -40,14 +40,14 @@ const Concerts = () => {
         </video>
         <div className="absolute inset-0 bg-black/40 z-10" /> {/* darker overlay */}
         <div className="relative z-20 h-full flex flex-col justify-center items-center text-center px-6">
-          <motion.h1
-            className="text-5xl md:text-6xl font-extrabold tracking-wide mb-6 bg-gradient-to-r from-yellow-400 to-yellow-200 text-transparent bg-clip-text"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            CONCERTS & ENTERTAINMENT SHOWS
-          </motion.h1>
+<motion.h1
+  className="text-3xl md:text-6xl font-extrabold tracking-wide mb-6 bg-gradient-to-r from-yellow-400 to-yellow-200 text-transparent bg-clip-text"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+>
+  CONCERTS & ENTERTAINMENT SHOWS
+</motion.h1>
           <motion.p
             className="text-white text-lg md:text-xl max-w-2xl font-medium"
             initial={{ opacity: 0, y: 20 }}
