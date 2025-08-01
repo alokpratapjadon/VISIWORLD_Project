@@ -18,7 +18,7 @@ const Footer = () => {
     { name: 'Concerts', href: '/services/concerts' },
     { name: 'Destination Management', href: '/services/destination-management' },
     { name: 'Weddings', href: '/services/weddings' },
-    { name: 'Hotel Booking & Visa Services', href: '/services/travel-services' }
+    { name: 'HOTEL & TRAVEL SERVICES', href: '/services/travel-services' }
   ];
 
   const socialLinks = [
@@ -109,7 +109,7 @@ const Footer = () => {
             <div className="w-1/3">
               <h4 className="text-base font-semibold mb-3">Services</h4>
               <ul className="space-y-2">
-                {services.slice(0, 5).map((service, index) => (
+                {services.map((service, index) => (
                   <li key={index}>
                     <a href={service.href} className="text-xs text-gray-300 hover:text-luxury-gold transition-colors">
                       {service.name}
