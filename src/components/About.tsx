@@ -13,6 +13,30 @@ import miceTravelImage from '../Assets/wedding1.jpg'; // from MiceTravel images 
 const About = () => {
   const [currentContentIndex, setCurrentContentIndex] = useState(0);
   const [showArrows, setShowArrows] = useState(false);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [touchEndX, setTouchEndX] = useState<number | null>(null);
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEndX(null);
+    setTouchStartX(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEndX(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStartX || !touchEndX) return;
+    const distance = touchStartX - touchEndX;
+    if (distance > minSwipeDistance) {
+      nextContent();
+    } else if (distance < -minSwipeDistance) {
+      prevContent();
+    }
+    setTouchStartX(null);
+    setTouchEndX(null);
+  };
 
   const contentSections = [
     {
@@ -27,7 +51,6 @@ const About = () => {
     {
       title: "Why Choose Us",
       content:
-        "• 100+ successful events across India\n" +
         "• Strong vendor network nationwide\n" +
         "• In-house creative, production & coordination teams\n" +
         "• Tailored packages for all budgets\n" +
@@ -72,11 +95,13 @@ const About = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-gray-100 shadow-lg transform rotate-2 z-0"></div>
             <div className="absolute inset-0 bg-gray-50 shadow-md transform -rotate-1 z-10"></div>
-            <div
-              className="relative bg-white shadow-xl p-6 md:p-8 z-20 cursor-pointer"
-              onClick={handleInteraction}
-              onTouchStart={handleInteraction}
-            >
+          <div
+            className="relative bg-white shadow-xl p-6 md:p-8 z-20 cursor-pointer"
+            onClick={handleInteraction}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
               <h3 className="text-2xl md:text-3xl font-light text-gray-900 mb-4 md:mb-6 font-poppins">
                 {contentSections[currentContentIndex].title}
               </h3>

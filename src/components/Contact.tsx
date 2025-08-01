@@ -6,6 +6,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: '',
     eventDomain: ''
   });
@@ -95,6 +96,18 @@ const Contact = () => {
                       name="email"
                       placeholder="Your Email"
                       value={formData.email}
+                      onChange={e => handleChange(e.target.name, e.target.value)}
+                      className="w-full px-0 py-3 md:py-4 bg-transparent border-0 border-b-2 border-gray-300 focus:border-luxury-gold focus:outline-none text-gray-900 placeholder-gray-500 text-base md:text-lg font-prata transition-all duration-300"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Your Phone number"
+                      value={formData.phone}
                       onChange={e => handleChange(e.target.name, e.target.value)}
                       className="w-full px-0 py-3 md:py-4 bg-transparent border-0 border-b-2 border-gray-300 focus:border-luxury-gold focus:outline-none text-gray-900 placeholder-gray-500 text-base md:text-lg font-prata transition-all duration-300"
                       required
