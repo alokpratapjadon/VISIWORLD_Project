@@ -58,7 +58,9 @@ const Hero = () => {
         
         {/* Center Logo */}
         <div className="flex-1 flex justify-center">
-          <img src={newLogo} alt="Center Logo" className="h-20 w-auto object-contain" />
+          <div className="h-20 w-24 flex items-center justify-center">
+            <img src={newLogo} alt="Center Logo" className="object-contain max-w-none max-h-none" style={{ height: '350px', width: '350px' }} />
+          </div>
         </div>
         
         {/* Right Placeholder */}
@@ -77,7 +79,9 @@ const Hero = () => {
       </div>
 
       {/* Menus */}
-      <MobileMenu />
+      <div className="pt-18">
+        <MobileMenu />
+      </div>
       <div className="relative z-20 flex flex-col justify-center h-screen">
         <DesktopMenu />
       </div>
