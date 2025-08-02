@@ -50,15 +50,19 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/40 z-10" />
 
       {/* 🔰 Mobile Top Logo Row - now scrolls with content */}
-      <div className="relative z-30 flex items-center justify-between px-4 py-3 md:hidden bg-black/30 backdrop-blur-sm">
+      <div className="relative z-30 flex items-center px-4 py-3 md:hidden bg-black/30 backdrop-blur-sm">
         {/* Left Logo */}
-        <img src={oldLogo} alt="Left Logo" className="h-20 w-auto object-contain" />
+        <div className="flex-1 flex justify-start">
+          <img src={oldLogo} alt="Left Logo" className="h-20 w-auto object-contain" />
+        </div>
         
         {/* Center Logo */}
-        <img src={newLogo} alt="Center Logo" className="h-14 w-auto object-contain" />
+        <div className="flex-1 flex justify-center">
+          <img src={newLogo} alt="Center Logo" className="h-20 w-auto object-contain" />
+        </div>
         
-        {/* Optional Right Logo or leave blank for spacing */}
-        <div className="w-16" /> {/* Placeholder for symmetry */}
+        {/* Right Placeholder */}
+        <div className="flex-1" />
       </div>
 
       {/* 🖥️ Desktop Topbar */}
