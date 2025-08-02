@@ -59,12 +59,14 @@ const Hero = () => {
         {/* Center Logo */}
         <div className="flex-1 flex justify-center">
           <div className="h-20 w-24 flex items-center justify-center">
-            <img src={newLogo} alt="Center Logo" className="object-contain max-w-none max-h-none" style={{ height: '350px', width: '350px' }} />
+            <img src={newLogo} alt="Center Logo" className="object-contain max-w-none max-h-none" style={{ height: '300px', width: '300px' }} />
           </div>
         </div>
         
-        {/* Right Placeholder */}
-        <div className="flex-1" />
+        {/* Menu Icon */}
+        <div className="flex-1 flex justify-end items-center mb-4">
+          <MobileMenu />
+        </div>
       </div>
 
       {/* 🖥️ Desktop Topbar */}
@@ -76,11 +78,6 @@ const Hero = () => {
         <div className="absolute left-0 right-0 top-0 bottom-0 flex items-center justify-center pointer-events-none">
           <img src={newLogo} alt="New Centered Logo" className="h-24 w-auto object-contain" />
         </div>
-      </div>
-
-      {/* Menus */}
-      <div className="pt-18">
-        <MobileMenu />
       </div>
       <div className="relative z-20 flex flex-col justify-center h-screen">
         <DesktopMenu />
