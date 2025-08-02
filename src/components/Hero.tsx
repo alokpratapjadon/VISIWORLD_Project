@@ -1,7 +1,7 @@
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
+import { useViewportScroll } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import heroVideo from '../Assets/hero section video.mp4';
-import mobileHeroVideo from '../Assets/Mobile visiworld.mp4';
+import heroVideo from '../Assets/Desktop Wedding.mp4';
+import mobileHeroVideo from '../Assets/Mobile view weddings (2).mp4';
 import oldLogo from '../Assets/IMG_9055.png';
 import newLogo from '../Assets/centerheronav.png';
 import MobileMenu from './MobileMenu';
@@ -16,9 +16,6 @@ const Hero = () => {
       setOffsetY(latest);
     });
   }, [scrollY]);
-
-  // Map scrollY to a translateY value for the text
-  const translateY = useTransform(scrollY, [0, 300], [0, -50]);
 
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden">
@@ -50,19 +47,6 @@ const Hero = () => {
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 z-10" />
-
-      {/* Mobile-only text overlay */}
-<motion.div
-  style={{ translateY }}
-  className="absolute bottom-24 left-4 right-4 z-20 font-poppins text-left block md:hidden"
->
-        <h2 className="font-bold text-5xl mb-2 text-white/80">Crafting Grand Experiences</h2>
-        <p className="text-base leading-relaxed whitespace-pre-line text-white/70">
-          Creating extraordinary experiences and {'\n'}
-          unforgettable moments through{'\n'}
-          luxury event management and bespoke celebrations.
-        </p>
-      </motion.div>
 
       {/* Top Bar with Old Logo */}
       <div className="relative absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-6 py-4 md:px-10">
