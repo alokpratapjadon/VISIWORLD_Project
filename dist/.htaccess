@@ -1,0 +1,12 @@
+# Redirect all requests to index.html except for existing files and directories
+Options -MultiViews
+RewriteEngine On
+RewriteBase /
+
+# Handle requests for existing files and directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [L]
+
+# Redirect all other requests to index.html
+RewriteRule ^.*$ /index.html [L,QSA]

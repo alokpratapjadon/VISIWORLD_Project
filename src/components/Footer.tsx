@@ -1,9 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, MessageCircle } from 'lucide-react';
 import LogoImage from '../Assets/IMG_9055.png';
 
 const Footer = () => {
+  const [clickCount, setClickCount] = useState(0);
+  const [timeoutId, setTimeoutId] = useState<any>(null);
+  
+  const handleCopyrightClick = () => {
+    // Clear any existing timeout
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    
+    setClickCount(prev => {
+      const newClickCount = prev + 1;
+      
+      // Open link only on 3rd click
+      if (newClickCount === 3) {
+        window.open('https://my-portfolio-8lao.vercel.app/', '_blank');
+        return 0; // Reset click count after opening
+      }
+      
+      return newClickCount;
+    });
+    
+    // Set a new timeout to reset the click count after 1.5 seconds
+    const newTimeoutId = setTimeout(() => {
+      setClickCount(0);
+      setTimeoutId(null);
+    }, 1500);
+    
+    setTimeoutId(newTimeoutId);
+  };
+
   const quickLinks = [
     { name: 'Home', to: '/' },
     { name: 'Services', to: '/services#services' },
@@ -207,7 +237,7 @@ const Footer = () => {
         {/* Footer Bottom Bar */}
         <div className="border-t border-gray-800 mt-10 pt-4">
           <p className="text-center text-sm text-gray-400 font-poppins" style={{ fontFamily: 'Poppins, sans-serif' }}>
-            © 2025 VISIWORLD Events. All rights reserved. <span className="hidden md:inline">Licensed &amp; Protected under applicable laws.</span>
+            <a onClick={handleCopyrightClick} className="text-gray-400 cursor-pointer">©</a> 2025 VISIWORLD Events. All rights reserved. Licensed &amp; Protected under applicable laws. Website by <a href="https://writeupright.co.in/" target="_blank" rel="noopener noreferrer" className="text-luxury-gold hover:underline">WriteUpright</a>.
           </p>
         </div>
       </div>
