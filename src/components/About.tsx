@@ -21,7 +21,7 @@ const About = () => {
   const contentSections = [
     {
       title: "Our Story",
-      content: "VisiWorld is a premier event management company in India, known for creativity, integrity, and flawless execution. With expert teams in Delhi, Mumbai, Jaipur, and Goa, we deliver exceptional experiences with regional insight and national reach."
+      content: "Visiworld is a premier event management company in India, known for creativity, integrity, and flawless execution. With expert teams in Delhi, Mumbai, Jaipur, and Goa, we deliver exceptional experiences with regional insight and national reach."
     },
     {
       title: "Our Signature Experiences",

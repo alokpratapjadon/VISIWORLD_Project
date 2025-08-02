@@ -52,10 +52,10 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/40 z-10" />
 
       {/* Mobile-only text overlay */}
-      <motion.div
-        style={{ translateY }}
-        className="absolute bottom-10 left-4 right-4 z-20 font-poppins text-left block md:hidden"
-      >
+<motion.div
+  style={{ translateY }}
+  className="absolute bottom-24 left-4 right-4 z-20 font-poppins text-left block md:hidden"
+>
         <h2 className="font-bold text-5xl mb-2 text-white/80">Crafting Grand Experiences</h2>
         <p className="text-base leading-relaxed whitespace-pre-line text-white/70">
           Creating extraordinary experiences and {'\n'}

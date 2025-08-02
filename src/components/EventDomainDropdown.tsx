@@ -3,15 +3,17 @@ import React, { useState, useRef, useEffect } from 'react';
 interface EventDomainDropdownProps {
   value: string;
   onChange: (value: string) => void;
-  options?: { value: string; label: string }[];
+  options?: { value: string; label: string; themeClass?: string }[];
 }
 
 const defaultOptions = [
-  { value: 'wedding', label: 'Wedding' },
-  { value: 'travel', label: 'Travel' },
-  { value: 'corporate', label: 'Corporate Event' },
-  { value: 'concert', label: 'Concert' },
-  { value: 'other', label: 'Other' },
+  { value: 'corporate_social_events', label: 'Corporate & Social Events', themeClass: 'bg-corporate-gold text-white' },
+  { value: 'exhibitions', label: 'Exhibitions', themeClass: 'bg-exhibitions-purple text-white' },
+  { value: 'concerts', label: 'Concerts', themeClass: 'bg-concerts-red text-white' },
+  { value: 'destination_management', label: 'Destination Management', themeClass: 'bg-destination-green text-white' },
+  { value: 'weddings', label: 'Weddings', themeClass: 'bg-weddings-pink text-white' },
+  { value: 'hotel_travel_services', label: 'HOTEL & TRAVEL SERVICES', themeClass: 'bg-hotel-blue text-white' },
+  { value: 'other', label: 'Other', themeClass: 'bg-gray-500 text-white' },
 ];
 
 const EventDomainDropdown: React.FC<EventDomainDropdownProps> = ({
@@ -78,7 +80,9 @@ const EventDomainDropdown: React.FC<EventDomainDropdownProps> = ({
               role="option"
               aria-selected={value === opt.value}
               className={`cursor-pointer select-none relative py-2 pl-4 pr-4 hover:bg-luxury-gold hover:text-white ${
-                value === opt.value ? 'font-semibold bg-luxury-gold text-white' : 'text-gray-900'
+                value === opt.value
+                  ? `font-semibold ${opt.themeClass || 'bg-luxury-gold text-white'}`
+                  : 'text-gray-900'
               }`}
               onClick={() => handleOptionClick(opt.value)}
             >

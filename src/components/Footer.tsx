@@ -123,9 +123,13 @@ const Footer = () => {
             <div className="w-1/3">
               <h4 className="text-base font-semibold mb-3">Contact</h4>
               <div className="space-y-3">
-                <p className="text-xs text-gray-300">+91 0000000000</p>
-                <p className="text-xs text-gray-300">hello@yourevents.com</p>
-                <p className="text-xs text-gray-300">New Delhi, India</p>
+                <p className="text-xs text-gray-300">+91 87654 32109</p>
+                <p className="text-xs text-gray-300">info@visiworld.in</p>
+              <p className="text-xs text-gray-300">
+                <span className="text-sm font-semibold">Visiworld events and travel Pvt. Ltd.</span><br />
+                <span className="text-xs">Operations office - UNIT NO 25, Ground floor, HUDA Auto market area,</span><br />
+                <span className="text-xs">Sector 12, Bahadurgarh- badli road, Bahadurgarh, Haryana 124507</span>
+              </p>
               </div>
             </div>
             </div>
@@ -182,15 +186,19 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-luxury-gold flex-shrink-0" />
-                <p className="text-sm text-gray-300 font-poppins">+91 0000000000</p>
+                <p className="text-sm text-gray-300 font-poppins">+91 87654 32109</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-luxury-gold flex-shrink-0" />
-                <p className="text-sm text-gray-300 font-poppins">hello@yourevents.com</p>
+                <p className="text-sm text-gray-300 font-poppins">CEO@visiworld.in</p>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-luxury-gold flex-shrink-0" />
-                <p className="text-sm text-gray-300 font-poppins">New Delhi, India</p>
+              <p className="text-sm text-gray-300 font-poppins">
+                <span className="text-lg font-semibold">Visiworld events and travel Pvt. Ltd.</span><br />
+                <span className="text-sm">Operations office - UNIT NO 25, Ground floor, HUDA Auto market area,</span><br />
+                <span className="text-sm">Sector 12, Bahadurgarh- badli road, Bahadurgarh, Haryana 124507</span>
+              </p>
               </div>
             </div>
           </div>

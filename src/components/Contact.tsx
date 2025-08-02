@@ -23,25 +23,29 @@ const Contact = () => {
     }));
   };
 
-  const contactInfo = [
+    const contactInfo = [
     {
       title: "Phone",
-      details: ["+91 98765 43210", "+91 87654 32109"],
+      details: ["+91 87654 32109"],
       icon: "📞"
     },
     {
       title: "Email",
-      details: ["hello@eventra.com", "events@eventra.com"],
+      details: ["info@visiworld.in", "CEO@visiworld.in"],
       icon: "✉️"
     },
-    {
-      title: "Address",
-      details: ["123 Luxury Avenue", "Mumbai, India 400001"],
-      icon: "🏠"
-    },
+        {
+          title: "Address",
+          details: [
+            "Visiworld events and travel Pvt. Ltd.",
+            "Operations office - UNIT NO 25, Ground floor, HUDA Auto market area,",
+            "Sector 12, Bahadurgarh- badli road, Bahadurgarh, Haryana 124507"
+          ],
+          icon: "🏠"
+        },
     {
       title: "Hours",
-      details: ["Mon - Fri: 9:00 AM - 7:00 PM", "Sat: 10:00 AM - 4:00 PM"],
+      details: ["Mon - Fri: 9:00 AM - 7:00 PM", "Sat - Sun: 11:00 AM - 3:00 PM"],
       icon: "🕐"
     }
   ];
@@ -75,7 +79,7 @@ const Contact = () => {
             <div className="grid lg:grid-cols-2 gap-12 md:gap-16">
               {/* Contact Form */}
               <div className="relative z-20">
-                <h3 className="text-xl md:text-2xl font-light text-gray-900 mb-6 md:mb-8 font-prata">Send us a message</h3>
+                <h3 className="text-xl md:text-2xl font-light text-gray-900 mb-6 md:mb-8 font-poppins">Send us a message</h3>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
@@ -128,14 +132,14 @@ const Contact = () => {
                       value={formData.message}
                       onChange={e => handleChange(e.target.name, e.target.value)}
                       rows={6}
-                      className="w-full px-0 py-3 md:py-4 bg-transparent border-0 border-b-2 border-gray-300 focus:border-luxury-gold focus:outline-none text-gray-900 placeholder-gray-500 resize-none text-base md:text-lg font-prata transition-all duration-300"
+                      className="w-full px-0 py-3 md:py-4 bg-transparent border-0 border-b-2 border-gray-300 focus:border-luxury-gold focus:outline-none text-gray-900 placeholder-gray-500 resize-none text-base md:text-lg font-poppins transition-all duration-300"
                       required
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="bg-luxury-gold text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-medium hover:bg-luxury-darkgold transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 text-base md:text-lg font-prata shadow-lg"
+                    className="bg-luxury-gold text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-medium hover:bg-luxury-darkgold transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 text-base md:text-lg font-poppins shadow-lg"
                   >
                     <Send className="w-4 h-4 md:w-5 md:h-5" />
                     <span>Send Message</span>
@@ -145,7 +149,7 @@ const Contact = () => {
 
               {/* Contact Information */}
               <div className="relative z-20">
-                <h3 className="text-xl md:text-2xl font-light text-gray-900 mb-6 md:mb-8 font-prata">Get in touch</h3>
+                <h3 className="text-xl md:text-2xl font-light text-gray-900 mb-6 md:mb-8 font-poppins">Get in touch</h3>
                 
                 <div className="space-y-6 md:space-y-8">
                   {contactInfo.map((info, index) => (
@@ -155,9 +159,18 @@ const Contact = () => {
                       </div>
                       <div>
                         <h4 className="text-base md:text-lg font-semibold text-gray-900 mb-2 font-prata">{info.title}</h4>
-                        {info.details.map((detail, idx) => (
-                          <p key={idx} className="text-sm md:text-base text-gray-600 font-prata">{detail}</p>
-                        ))}
+                        {info.title === "Address" ? (
+                          <>
+                            <p className="text-lg font-semibold text-gray-600 font-poppins" key="main">{info.details[0]}</p>
+                            {info.details.slice(1).map((detail, idx) => (
+                              <p key={idx} className="text-sm text-gray-600 font-poppins">{detail}</p>
+                            ))}
+                          </>
+                        ) : (
+                          info.details.map((detail, idx) => (
+                            <p key={idx} className="text-sm md:text-base text-gray-600 font-poppins">{detail}</p>
+                          ))
+                        )}
                       </div>
                     </div>
                   ))}
@@ -167,17 +180,17 @@ const Contact = () => {
 
             {/* Embedded Google Map */}
             <div className="mt-8 md:mt-12 rounded-2xl overflow-hidden shadow-2xl border border-white/40 max-w-full">
-              <iframe
-                title="Gurugram Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224568.4763577788!2d76.82527005787213!3d28.4228038433857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d582e38859%3A0x2cf5fe8e5c64b1e!2sGurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1752181628921!5m2!1sen!2sin"
-                width="100%"
-                height="400"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-[350px] md:h-[400px]"
-              ></iframe>
+                <iframe
+                  title="Gurugram Map"
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2559.6773693843497!2d76.91213169379019!3d28.66977065668689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDQwJzA4LjQiTiA3NsKwNTQnNTAuMSJF!5e0!3m2!1sen!2sin!4v1754122512903!5m2!1sen!2sin"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-[350px] md:h-[400px]"
+                ></iframe>
             </div>
           </div>
         </div>
