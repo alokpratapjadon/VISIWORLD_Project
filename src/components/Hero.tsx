@@ -52,7 +52,7 @@ const Hero = () => {
       {/* 🔰 Mobile Top Logo Row - now scrolls with content */}
       <div className="relative z-30 flex items-center justify-between px-4 py-3 md:hidden bg-black/30 backdrop-blur-sm">
         {/* Left Logo */}
-        <img src={oldLogo} alt="Left Logo" className="h-16 w-auto object-contain" />
+        <img src={oldLogo} alt="Left Logo" className="h-20 w-auto object-contain" />
         
         {/* Center Logo */}
         <img src={newLogo} alt="Center Logo" className="h-14 w-auto object-contain" />
