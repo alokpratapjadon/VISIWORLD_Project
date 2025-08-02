@@ -21,7 +21,7 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden">
-      
+
       {/* 📱 Mobile Background Video */}
       <video
         autoPlay
@@ -49,22 +49,26 @@ const Hero = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 z-10" />
 
-
-      {/* 🔰 Top-left Logo (mobile only) */}
-      <div className="absolute top-0 left-0 z-30 flex items-center h-24 px-4 md:hidden">
-        <img src={oldLogo} alt="Top Left Logo" className="h-12 object-contain" />
+      {/* 🔰 Mobile Top Logo Row - now scrolls with content */}
+      <div className="relative z-30 flex items-center justify-between px-4 py-3 md:hidden bg-black/30 backdrop-blur-sm">
+        {/* Left Logo */}
+        <img src={oldLogo} alt="Left Logo" className="h-16 w-auto object-contain" />
+        
+        {/* Center Logo */}
+        <img src={newLogo} alt="Center Logo" className="h-14 w-auto object-contain" />
+        
+        {/* Optional Right Logo or leave blank for spacing */}
+        <div className="w-16" /> {/* Placeholder for symmetry */}
       </div>
 
-      {/* 🎯 Center-aligned Logo (mobile only) */}
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-30 flex items-center h-24 md:hidden">
-        <img src={newLogo} alt="Centered Logo" className="h-10 object-contain" />
-      </div>
-
-      {/* 🔒 Desktop Topbar */}
-      <div className="relative hidden md:flex absolute top-0 left-0 right-0 z-30 items-center justify-between px-6 py-4 md:px-10">
-        <img src={oldLogo} alt="Old Brand Logo" className="h-28 lg:h-32 w-auto object-contain" />
+      {/* 🖥️ Desktop Topbar */}
+      <div className="absolute top-0 left-0 right-0 z-30 hidden md:flex items-center justify-between px-10 py-4">
+        {/* Left Logo */}
+        <img src={oldLogo} alt="Old Brand Logo" className="h-32 w-auto object-contain" />
+        
+        {/* Centered Logo */}
         <div className="absolute left-0 right-0 top-0 bottom-0 flex items-center justify-center pointer-events-none">
-          <img src={newLogo} alt="New Centered Logo" className="h-20 lg:h-24 w-auto object-contain" />
+          <img src={newLogo} alt="New Centered Logo" className="h-24 w-auto object-contain" />
         </div>
       </div>
 
