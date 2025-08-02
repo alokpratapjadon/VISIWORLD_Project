@@ -49,18 +49,6 @@ const Hero = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 z-10" />
 
-      {/* ✨ Mobile Text */}
-      <motion.div
-        style={{ translateY }}
-        className="absolute bottom-24 left-4 right-4 z-20 font-poppins text-left block md:hidden"
-      >
-        <h2 className="font-bold text-5xl mb-2 text-white/80">Crafting Grand Experiences</h2>
-        <p className="text-base leading-relaxed whitespace-pre-line text-white/70">
-          Creating extraordinary experiences and {'\n'}
-          unforgettable moments through{'\n'}
-          luxury event management and bespoke celebrations.
-        </p>
-      </motion.div>
 
       {/* 🔰 Top-left Logo (mobile only) */}
       <div className="absolute top-0 left-0 z-30 flex items-center h-24 px-4 md:hidden">
