@@ -1,6 +1,6 @@
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import heroVideo from '../Assets/hero section video.mp4';
+import heroVideo from '../Assets/Destination2.mp4';
 import mobileHeroVideo from '../Assets/Mobile view weddings (2).mp4';
 import oldLogo from '../Assets/IMG_9055.png';
 import newLogo from '../Assets/centerheronav.png';
