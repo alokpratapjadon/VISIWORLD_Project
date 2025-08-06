@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import EventDomainDropdown from './EventDomainDropdown';
+import { emailjsConfig } from '../config/emailjs';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,10 +12,53 @@ const Contact = () => {
     message: '',
     eventDomain: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitMessage, setSubmitMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setSubmitMessage('');
+
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        client_email: formData.email,
+        phone: formData.phone,
+        event_domain: formData.eventDomain,
+        message: formData.message,
+        to_name: 'Visiworld Team',
+        subject: `New Contact Form Submission from ${formData.name}`,
+      };
+
+      await emailjs.send(
+        emailjsConfig.SERVICE_ID,
+        emailjsConfig.TEMPLATE_ID,
+        templateParams,
+        emailjsConfig.PUBLIC_KEY
+      );
+
+      setSubmitStatus('success');
+      setSubmitMessage('Thank you! Your message has been sent successfully.');
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        eventDomain: ''
+      });
+    } catch (error) {
+      setSubmitStatus('error');
+      setSubmitMessage('Sorry, there was an error sending your message. Please try again.');
+      console.error('EmailJS Error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (name: string, value: string) => {
@@ -137,13 +182,42 @@ const Contact = () => {
                     />
                   </div>
 
-                  <button
-                    type="submit"
-                    className="bg-luxury-gold text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-medium hover:bg-luxury-darkgold transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 text-base md:text-lg font-poppins shadow-lg"
-                  >
-                    <Send className="w-4 h-4 md:w-5 md:h-5" />
-                    <span>Send Message</span>
-                  </button>
+                  <div className="space-y-4">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className={`w-full md:w-auto bg-luxury-gold text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-medium transition-all duration-300 flex items-center justify-center space-x-2 text-base md:text-lg font-poppins shadow-lg ${
+                        isSubmitting 
+                          ? 'opacity-50 cursor-not-allowed' 
+                          : 'hover:bg-luxury-darkgold hover:scale-105'
+                      }`}
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-4 h-4 md:w-5 md:h-5 animate-spin" />
+                          <span>Sending...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4 md:w-5 md:h-5" />
+                          <span>Send Message</span>
+                        </>
+                      )}
+                    </button>
+
+                    {submitStatus === 'success' && (
+                      <div className="flex items-center space-x-2 p-4 bg-green-50 border border-green-200 rounded-lg text-green-700">
+                        <CheckCircle className="w-5 h-5 text-green-600" />
+                        <span className="text-sm font-medium">{submitMessage}</span>
+                      </div>
+                    )}
+                    {submitStatus === 'error' && (
+                      <div className="flex items-center space-x-2 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                        <AlertCircle className="w-5 h-5 text-red-600" />
+                        <span className="text-sm font-medium">{submitMessage}</span>
+                      </div>
+                    )}
+                  </div>
                 </form>
               </div>
 
