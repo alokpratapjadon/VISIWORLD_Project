@@ -12,6 +12,10 @@ const Contact = () => {
     message: '',
     eventDomain: ''
   });
+  const [errors, setErrors] = useState({
+    email: '',
+    phone: ''
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [submitMessage, setSubmitMessage] = useState('');
@@ -61,17 +65,53 @@ const Contact = () => {
     }
   };
 
+  const validateEmail = (email: string): boolean => {
+    const gmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return gmailRegex.test(email);
+  };
+
+  const validatePhone = (phone: string): boolean => {
+    const phoneRegex = /^\d{10}$/;
+    return phoneRegex.test(phone);
+  };
+
   const handleChange = (name: string, value: string) => {
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
+
+    // Clear errors when user starts typing
+    if (name === 'email' && errors.email) {
+      setErrors(prev => ({ ...prev, email: '' }));
+    }
+    if (name === 'phone' && errors.phone) {
+      setErrors(prev => ({ ...prev, phone: '' }));
+    }
+  };
+
+  const handleBlur = (name: string, value: string) => {
+    if (name === 'email' && value) {
+      if (!validateEmail(value)) {
+        setErrors(prev => ({ ...prev, email: 'Please enter a valid Gmail address' }));
+      } else {
+        setErrors(prev => ({ ...prev, email: '' }));
+      }
+    }
+    
+    if (name === 'phone' && value) {
+      if (!validatePhone(value)) {
+        setErrors(prev => ({ ...prev, phone: 'Please enter exactly 10 digits' }));
+      } else {
+        setErrors(prev => ({ ...prev, phone: '' }));
+      }
+    }
   };
 
     const contactInfo = [
     {
       title: "Phone",
-      details: ["+91 87654 32109"],
+      details: ["+91 79889 73721"],
       icon: "📞"
     },
     {
@@ -146,9 +186,15 @@ const Contact = () => {
                       placeholder="Your Email"
                       value={formData.email}
                       onChange={e => handleChange(e.target.name, e.target.value)}
-                      className="w-full px-0 py-3 md:py-4 bg-transparent border-0 border-b-2 border-gray-300 focus:border-luxury-gold focus:outline-none text-gray-900 placeholder-gray-500 text-base md:text-lg font-prata transition-all duration-300"
+                      onBlur={e => handleBlur(e.target.name, e.target.value)}
+                      className={`w-full px-0 py-3 md:py-4 bg-transparent border-0 border-b-2 focus:outline-none text-gray-900 placeholder-gray-500 text-base md:text-lg font-prata transition-all duration-300 ${
+                        errors.email ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-luxury-gold'
+                      }`}
                       required
                     />
+                    {errors.email && (
+                      <p className="text-red-500 text-sm mt-1 font-poppins">{errors.email}</p>
+                    )}
                   </div>
 
                   <div>
@@ -158,9 +204,16 @@ const Contact = () => {
                       placeholder="Your Phone number"
                       value={formData.phone}
                       onChange={e => handleChange(e.target.name, e.target.value)}
-                      className="w-full px-0 py-3 md:py-4 bg-transparent border-0 border-b-2 border-gray-300 focus:border-luxury-gold focus:outline-none text-gray-900 placeholder-gray-500 text-base md:text-lg font-prata transition-all duration-300"
+                      onBlur={e => handleBlur(e.target.name, e.target.value)}
+                      maxLength={10}
+                      className={`w-full px-0 py-3 md:py-4 bg-transparent border-0 border-b-2 focus:outline-none text-gray-900 placeholder-gray-500 text-base md:text-lg font-prata transition-all duration-300 ${
+                        errors.phone ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-luxury-gold'
+                      }`}
                       required
                     />
+                    {errors.phone && (
+                      <p className="text-red-500 text-sm mt-1 font-poppins">{errors.phone}</p>
+                    )}
                   </div>
 
                   <div>

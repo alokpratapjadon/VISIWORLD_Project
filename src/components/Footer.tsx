@@ -53,9 +53,9 @@ const Footer = () => {
 
   const socialLinks = [
     { name: 'Facebook', icon: Facebook, link: 'https://facebook.com' },
-    { name: 'Instagram', icon: Instagram, link: 'https://instagram.com' },
+    { name: 'Instagram', icon: Instagram, link: 'https://www.instagram.com/visiworld_events?igsh=MWl3ajRrdmcwNGxveQ==' },
     { name: 'X', icon: Twitter, link: 'https://x.com' },
-    { name: 'WhatsApp', icon: MessageCircle, link: 'https://wa.me/910000000000' }
+    { name: 'WhatsApp', icon: MessageCircle, link: 'https://wa.me/917988973721' }
   ];
 
   return (
@@ -153,7 +153,7 @@ const Footer = () => {
             <div className="w-1/3">
               <h4 className="text-base font-semibold mb-3">Contact</h4>
               <div className="space-y-3">
-                <p className="text-xs text-gray-300">+91 87654 32109</p>
+                <p className="text-xs text-gray-300">+91 79889 73721</p>
                 <p className="text-xs text-gray-300">info@visiworld.in</p>
               <p className="text-xs text-gray-300">
                 <span className="text-sm font-semibold">Visiworld events and travel Pvt. Ltd.</span><br />
@@ -216,7 +216,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-luxury-gold flex-shrink-0" />
-                <p className="text-sm text-gray-300 font-poppins">+91 87654 32109</p>
+                <p className="text-sm text-gray-300 font-poppins">+91 79889 73721</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-luxury-gold flex-shrink-0" />
